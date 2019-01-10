@@ -91,7 +91,7 @@ app.config(function ($routeProvider) {
     });
     $routeProvider.when("/ProductDetail", {
         controller: "ProductDetailController",
-        templateUrl: "app/views/ProductDetailsNew.html"
+        templateUrl: "app/views/ProductdetailsNew.html"
     });
     $routeProvider.when("/WishList", {
         controller: "WishListController1",
