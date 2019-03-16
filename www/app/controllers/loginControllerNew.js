@@ -31,12 +31,12 @@ app.controller('loginController', ['$scope', '$rootScope', '$location', 'authSer
                 $location.path('/home');         
                 swal({
                     title: response.userName,
-                    Postion:"top left",
                     text: "Successfully Login",
                     type:"success",
                     showConfirmButton:false,
                     timer: 1000
                 })
+                
             }
         },
          function (err) {           

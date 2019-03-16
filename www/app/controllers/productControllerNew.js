@@ -54,14 +54,17 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
         $rootScope.$emit("AddToCart", productID, product, ID, 1, $scope.AllProductsColumns);       
     }
 
-    $rootScope.$on("CategoryID", function (event, ID) {
+    $rootScope.$on("CategoryID", function (event, ID,Name) {
         debugger;
             
-             $scope.AddCatArray(ID);
+        $scope.AddCatArray(ID, Name);
   
     });
 
- 
+    
+           $('[data-toggle="tooltip"]').tooltip();
+
+  
 
     $scope.GetCategories = function () {
         $.ajax({
@@ -121,8 +124,8 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
         }
         if(isGlobalSearchActive == true)
         {
-            $scope.search = globalSearchstring;
-             
+        
+            localStorage.setItem("Searchstring", globalSearchstring);
         }
         var _localCategory = localStorage.getItem("CategoryFilterID");
         if (_localCategory != "" && _localCategory != undefined) {
@@ -133,7 +136,8 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
         else {
             _localCategory = '';
         }
-   
+        $scope.search = localStorage.getItem("Searchstring");
+        debugger;
         var _model = { displayLength: $scope.itemsPerPage, displayStart: $scope.startpage, searchText: $scope.search, filtertext: FilterText, Categories: $scope.categoriesobj, lowprice: $scope.Minval, highprice: $scope.Maxval, isFeatured: "0", ProductId: "" };
         $.ajax({
             url: serviceBase + 'api/Product/GetAllproduct',
@@ -144,6 +148,7 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
                 debugger;
                 $scope.total = data.iTotalDisplayRecords;
                 $scope.pagedItems = data.aaData;
+                console.log($scope.pagedItems);
                 localStorage.removeItem("CategoryFilterID");
                 var colStartn = 0;
                 for (var i = 0; i < data.aoColumns.length; i++) {
@@ -198,15 +203,19 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
         $scope.AllAttributeFilters = [];
         $scope.Minval = '';
         $scope.Maxval = '';
+        $scope.AttributefilterSummery = [];
+        $scope.Catgoryfiltersummery = [];
         CheckScopeBeforeApply();
         $scope.GetProducts();
+        localStorage.removeItem("CategoryFilterID");
         $scope.attrarraySelect = [];
     }
    
 
     $scope.GetProductImage = function (Path) {
+        debugger;
         if ($.trim(Path) != "") {
-            return _GlobalImagePath + "ProductImages/" + Path;
+            return _GlobalImagePath + "ProductImages/Large/" + Path;
         }
         return "../img/no-image.png";
     }
@@ -215,7 +224,11 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
 
     $scope.GetPath=function(path, index)
     {
+        debugger;
         var str_array = path.split(',');
+        if (str_array.length == 1) {
+            str_array.push(path)
+        }
         return str_array[index];
     }
 
@@ -516,7 +529,7 @@ app.controller('productController', ['$scope', '$rootScope', '$location', functi
 
 
     function init() {
-        
+        $("#mainmodel").trigger("click");
         $scope.IsLoadingData = true;
         $scope.GetProducts();
         $scope.GetCategories();

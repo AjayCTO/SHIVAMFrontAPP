@@ -63,28 +63,28 @@
         }
 
   .topsearch {
-            width: 42px;
+            width: 515px;
             height: 42px;
             border-radius: 42px;
             -webkit-transition: width 0.4s ease-in-out;
             transition: width 0.4s ease-in-out;
             position: relative;
-            background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png');
+            /*background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png');*/
             background-size: 30px 30px;
             background-repeat: no-repeat;
             box-shadow: none;
             border: 1px solid #ccc;
             padding-left: 32px;
-            background-position: 4px 5px;
+            background-position: 475px 5px;
         }
 
             /* When the input field gets focus, change its width to 100% */
-            .topsearch:focus {
+            /*.topsearch:focus {
                 width: 230px;
                 outline-width: 0;
                 outline: none;
                
-            }
+            }*/
 
         .desktop .header-main
         {
@@ -282,19 +282,19 @@
             }
 
         .product-grid4 .product-discount-label, .product-grid4 .product-new-label {
-            color: #fff;
-            background-color: #16a085;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            line-height: 45px;
-            height: 45px;
-            width: 45px;
-            border-radius: 50%;
-            position: absolute;
-            left: 10px;
-            top: 15px;
-            transition: all .3s;
+          color: #fff;
+    background-color: #d7292a;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 33px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    transition: all .3s;
         }
 
         .product-grid4 .product-discount-label {
@@ -308,11 +308,11 @@
         }
 
         .product-grid4 .product-content {
-            padding: 25px;
+            padding: 1px;
         }
 
         .product-grid4 .title {
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 400;
             text-transform: capitalize;
             margin: 0 0 7px;
@@ -329,9 +329,9 @@
 
         .product-grid4 .price {
             color: #16a085;
-            font-size: 17px;
+                font-size: 16px;
             font-weight: 700;
-            margin: 0 2px 15px 0;
+        
             display: block;
         }
 
@@ -372,8 +372,29 @@
         .product-grid4 {
             margin-bottom: 30px;
         }
+
+
     }
 
+    .fontstyle{
+              font-size:18px;
+          }
+
+        @media only screen and (max-width:560px) 
+        {
+          .product-grid4 .product-image4 img {
+            width: auto;
+            height: 160px;
+        }
+          .fontstyle{
+              font-size:13px;
+          }
+           .product-grid4 .price{
+               font-size:12px
+           }
+
+         
+        }
       .cartButton {
         color: #e67e22;
         background: #fff;
@@ -397,12 +418,12 @@
         padding: 15px;
     }
     .iconstyle {
-        margin-left: .3em;
-        margin: 0px 6px;
+          margin-left: -2.7em;
+         margin: 0px 1px;
         border: 1px solid #eceef1;
         padding: 4px 10px;
         /* border-radius: 13px; */
-        color: #007bff;
+        /*color: #2c387e;*/
     }
     .list-group.list-group-root {
         padding: 0;
@@ -415,7 +436,7 @@
 
         .list-group.list-group-root .list-group-item {
             border-radius: 0;
-            border-width: 1px 0 0 0;
+            border-width: 0px 0 0 0;
         }
 
         .list-group.list-group-root > .list-group-item:first-child {
@@ -424,6 +445,8 @@
 
         .list-group.list-group-root > .list-group > .list-group-item {
             padding-left: 30px;
+                padding: 0px;
+             margin: -3px;
         }
 
         .list-group.list-group-root > .list-group > .list-group > .list-group-item {
@@ -484,7 +507,7 @@
 
 
     table tr th {
-        background: #2c387e;
+        /*background: #2c387e;*/
         color: white;
         text-align: left;
         vertical-align: center;

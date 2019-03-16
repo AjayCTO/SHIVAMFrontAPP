@@ -103,6 +103,7 @@ app.controller('WishListController1', ['$scope','$rootScope', '$location','local
 
     function init()
     {
+        $("#mainmodel").trigger("click");
         $scope.GetWishListfromService();    
     }
 

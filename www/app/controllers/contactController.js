@@ -20,7 +20,8 @@ app.controller('contactController', ['$scope', '$location', 'authService', funct
                             EmailAddress: "",
                             message: ""
                         };
-                        toastr.success("Sucessfully Send");
+                        swal( "Thank you! Your Message successfully send", "success");
+                     
                         $scope.$apply();
                     }
                 },

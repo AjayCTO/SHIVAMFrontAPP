@@ -36,6 +36,14 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
         }
     };
 
+
+
+    $scope.reviewModal = function () {
+
+        $("#ReviewModal").modal("show");
+
+    }
+
     $scope.AddToCartGlobal = function (productID, product, ID, CartQuantity)
     {    
         debugger;
@@ -63,25 +71,38 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
 
     $scope.SelecteditemDetail = [];
 
-    $scope.GetProductImage = function (Path) {
+    $scope.GetthumbProductImage = function (Path) {
      
         if (Path != undefined && $.trim(Path.split(',')[0]) != "") {
             
+            return _GlobalImagePath + "ProductImages/thumb/" + Path.split(',')[0];
+        }
+        return "../img/ajax_loading.gif";
+       
+    }
+    $scope.GetProductImage = function (Path) {
+
+        if (Path != undefined && $.trim(Path.split(',')[0]) != "") {
+            //$('#ex1').trigger('zoom.destroy');
+            //$('#ex1').zoom();
             return _GlobalImagePath + "ProductImages/" + Path.split(',')[0];
         }
-        return "../img/no-image.png";
-       
+        return "../img/ajax_loading.gif";
+
     }
     
 
     $scope.changeimage = function (Data) {
         debugger
         $("#mainImage").attr("src", "");
+        $("#imageBig").attr("href", "");
         // $("#mainImage").attr("data-zoom-image", "");
         var src = $("#Image_" + Data).attr("src");
         $("#mainImage").attr("src", src);
-        //$("#mainImage").attr("data-zoom-image", src);
-        //$("#mainImage").elevateZoom();
+        $("#imageBig").attr("href", src);
+       // $("#mainimagehref").attr("href", src);
+        //$('#ex1').trigger('zoom.destroy');
+        //$('#ex1').zoom();
     }
 
     function CheckIfValueAvailable(Column, Value)
@@ -118,6 +139,33 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
         return _array;
     }
 
+   
+    debugger;
+    $('.thumbnails').on('click', 'a', function (e) {
+        var $this = $(this);
+
+        e.preventDefault();
+
+        // Use EasyZoom's `swap` method
+        api1.swap($this.data('standard'), $this.attr('href'));
+    });
+
+    // Setup toggles example
+  
+
+    $('.toggle').on('click', function () {
+        var $this = $(this);
+
+        if ($this.data("active") === true) {
+            $this.text("Switch on").data("active", false);
+            api2.teardown();
+        } else {
+            $this.text("Switch off").data("active", true);
+            api2._init();
+        }
+    });
+
+
     $scope.GetOtherDetails = function (item) {
         debugger;
         var allValues = item == undefined ? [] : item.split("#");
@@ -150,7 +198,9 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
                        
                                 $scope.product.allAttributes = $scope.similarproduct[i].productAttrubutes;                                                                       
                                 $scope.GetReviews(1);
-                                //$("#mainImage").elevateZoom();
+                               // $('#ex1').trigger('zoom.destroy');
+                                
+
                                 break;
                             }
                             else
@@ -253,9 +303,9 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
                 }
                 debugger;     
                 $scope.$apply();
-                
+            
                 $scope.GetOtherDetails();
-
+                
             }
         });
     }
@@ -303,10 +353,11 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
                 $scope.$apply();
                 $(".owl-carousel.owl-theme.GetRelatedPrdoucts").owlCarousel({
 
-                    // Show next and prev buttons
+                     //Show next and prev buttons
                     dots: false,
                     items: $scope.RelatedProducts.length,
                     margin: 15,
+                   
                     responsiveClass: true,
                     responsive: {
                         0: {
@@ -347,6 +398,7 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
 
     $scope.AddReview = function (ProductName)
     {
+        debugger;
         var authData = localStorageService.get('authorizationData');
         if (authData == null) {
             var url = $location.url();
@@ -356,11 +408,10 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
         }
         else {
 
-
-
             var reviews = $scope.review;
             reviews.ProductId = $scope.allProductDetailNewWithAttr[0].ProductVersionId;
-            reviews.Productattrid = $scope.product.ProductId
+            reviews.Productattrid = $scope.product.ProductId;
+            reviews.Name = authData.userName;
             $("#AddReview").addClass("disabled");
 
             $.ajax({
@@ -370,8 +421,10 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
                 data: reviews,
                 dataType: "Json",
                 success: function (resultData) {
-
+                    debugger;
                     if (resultData.success == true) {
+                        $("#ReviewModal").modal("hide");
+
 
                         $scope.review = { ProductId: $scope.allProductDetailNewWithAttr[0].ProductVersionId, Productattrid: $scope.product.ProductId, Name: '', Email: '', Review: '', Rating: 0 };
                         swal("Add Review for!", ProductName, "success")
@@ -393,8 +446,11 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
             data: { ProductId: $scope.product.ProductId },
             dataType: "json",
             success: function (resultData) {
+                debugger;
                 if (resultData.success == true) {
-                    $scope.product.reviews = resultData.data;              
+                    $scope.product.reviews = resultData.data;
+
+                    console.log($scope.product.reviews);
                     $scope.$apply();
                 }
                 else {
@@ -487,7 +543,149 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
           .toggleClass('fa fa-minus');
     });
 
+    !function ($) {
 
+        var Magnify = function (element, options) {
+            this.init('magnify', element, options)
+        }
+
+        Magnify.prototype = {
+
+            constructor: Magnify
+
+            , init: function (type, element, options) {
+                var event = 'mousemove'
+                    , eventOut = 'mouseleave';
+
+                this.type = type
+                this.$element = $(element)
+                this.options = this.getOptions(options)
+                this.nativeWidth = 0
+                this.nativeHeight = 0
+
+                this.$element.wrap('<div class="magnify" \>');
+                this.$element.parent('.magnify').append('<div class="magnify-large" \>');
+                this.$element.siblings(".magnify-large").css("background", "url('" + this.$element.attr("src") + "') no-repeat");
+
+                this.$element.parent('.magnify').on(event + '.' + this.type, $.proxy(this.check, this));
+                this.$element.parent('.magnify').on(eventOut + '.' + this.type, $.proxy(this.check, this));
+            }
+
+            , getOptions: function (options) {
+                options = $.extend({}, $.fn[this.type].defaults, options, this.$element.data())
+
+                if (options.delay && typeof options.delay == 'number') {
+                    options.delay = {
+                        show: options.delay
+                        , hide: options.delay
+                    }
+                }
+
+                return options
+            }
+
+            , check: function (e) {
+                var container = $(e.currentTarget);
+                var self = container.children('img');
+                var mag = container.children(".magnify-large");
+
+                // Get the native dimensions of the image
+                if (!this.nativeWidth && !this.nativeHeight) {
+                    var image = new Image();
+                    image.src = self.attr("src");
+
+                    this.nativeWidth = image.width;
+                    this.nativeHeight = image.height;
+
+                } else {
+
+                    var magnifyOffset = container.offset();
+                    var mx = e.pageX - magnifyOffset.left;
+                    var my = e.pageY - magnifyOffset.top;
+
+                    if (mx < container.width() && my < container.height() && mx > 0 && my > 0) {
+                        mag.fadeIn(100);
+                    } else {
+                        mag.fadeOut(100);
+                    }
+
+                    if (mag.is(":visible")) {
+                        var rx = Math.round(mx / container.width() * this.nativeWidth - mag.width() / 2) * -1;
+                        var ry = Math.round(my / container.height() * this.nativeHeight - mag.height() / 2) * -1;
+                        var bgp = rx + "px " + ry + "px";
+
+                        var px = mx - mag.width() / 2;
+                        var py = my - mag.height() / 2;
+
+                        mag.css({ left: px, top: py, backgroundPosition: bgp });
+                    }
+                }
+
+            }
+        }
+
+
+       // ZOOMER
+
+        //var $easyzoom = $('.easyzoom').easyZoom();
+
+        //// Setup thumbnails example
+        //var api1 = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+
+        //$('.thumbnails').on('click', 'a', function (e) {
+        //    var $this = $(this);
+
+        //    e.preventDefault();
+
+        //    // Use EasyZoom's `swap` method
+        //    api1.swap($this.data('standard'), $this.attr('href'));
+        //});
+
+        //// Setup toggles example
+        //var api2 = $easyzoom.filter('.easyzoom--with-toggle').data('easyZoom');
+
+        //$('.toggle').on('click', function () {
+        //    var $this = $(this);
+
+        //    if ($this.data("active") === true) {
+        //        $this.text("Switch on").data("active", false);
+        //        api2.teardown();
+        //    } else {
+        //        $this.text("Switch off").data("active", true);
+        //        api2._init();
+        //    }
+        //});
+
+
+
+
+        $.fn.magnify = function (option) {
+            return this.each(function () {
+                var $this = $(this)
+                    , data = $this.data('magnify')
+                    , options = typeof option == 'object' && option
+                if (!data) $this.data('tooltip', (data = new Magnify(this, options)))
+                if (typeof option == 'string') data[option]()
+            })
+        }
+
+        $.fn.magnify.Constructor = Magnify
+
+        $.fn.magnify.defaults = {
+            delay: 0
+        }
+
+
+
+
+        $(window).on('load', function () {
+            $('[data-toggle="magnify"]').each(function () {
+                var $mag = $(this);
+                $mag.magnify()
+            })
+        })
+
+    }(window.jQuery);
 
     function init() {
       

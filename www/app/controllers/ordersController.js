@@ -11,7 +11,9 @@ app.controller('ordersController', ['$scope', '$route', 'localStorageService', '
             $scope.loadnumber = $scope.CustomerOrders.data.length;
         }
     }
-
+    $scope.logOut = function () {
+        $rootScope.$emit("logout");
+    }
     $scope.orders = [];
 
     $scope.dataTableOpt ={
@@ -24,11 +26,11 @@ app.controller('ordersController', ['$scope', '$route', 'localStorageService', '
      
     $scope.getorderitem = function (Customer, item)
     {
-
-        
+     
+        debugger;
         localStorage.setItem("orderitem", JSON.stringify(item));
         localStorage.setItem("Customerdetails", JSON.stringify(Customer));
-        $location.path('/Billing');
+        $location.path('/OrderDetails');
     }
 
     $scope.CustomerOrders = [];
@@ -61,33 +63,9 @@ app.controller('ordersController', ['$scope', '$route', 'localStorageService', '
         }
     }
 
-    $scope.Cancleorderitem = function (id)
-    {
-        debugger;
-        bootbox.confirm("Are you sure you want to cancel this order ?", function (result)
-        {
-            if (result) {
-                $.ajax({
-                    url: serviceBase + '/api/CustomerWishlist/ordercancel?orderId=' + id,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (data, textStatus, xhr) {
-                        if (data.success = true) {
-                            $route.reload();
-                            toastr.success("Your oder is cancalled");
-
-                        }
-
-                        else {
-                            toastr.error("Something wrong");
-                        }
-                    }
-                });
-            }
-        });
-            }
     function init()
     {
+        $("#mainmodel").trigger("click");
         $scope.GetOrder();
     }
 

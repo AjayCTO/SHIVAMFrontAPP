@@ -1,6 +1,8 @@
 ﻿'use strict';
 app.controller('homeController', ['$scope', '$rootScope', 'localStorageService', '$location', function ($scope, $rootScope, localStorageService, $location)
 {
+    
+    $scope.Isloadingcat = false;
     $scope.searchcategoriesslider = [];
     $scope.AllProductsColumns = [];
     $scope.pagedItems = [];
@@ -23,22 +25,72 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
     }
      
 
-    $scope.GoToProductsWithCategoryID = function (ID)
-    {
-        debugger
-        localStorage.setItem("CategoryFilterID", ID);
-        $location.path("/Product");
-        $rootScope.$emit("CategoryID", ID);
+
+    $scope.GoToProductsWithCategoryID = function (ID, Name) {
+        debugger;
+        var url = $location.url();
+        if (url == "/Product") {
+            $rootScope.$emit("CategoryID", ID, Name);
+        }
+        else {
+            localStorage.setItem("CategoryFilterID", ID);
+            $location.path("/Product");
+            $rootScope.$emit("CategoryID", ID, Name);
+        }
+
     }
 
+
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+     
+        });
+
     $scope.GetCategories = function () {
+        debugger;
+        $scope.Isloadingcat = true;
         $.ajax({
             url: serviceBase + 'api/Categories/GetCategories',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
-                $scope.searchcategories = data; 
+                $scope.searchcategories = data;
+                console.log($scope.searchcategories);
+                $scope.Isloadingcat = false;
                 $scope.$apply();
+                $('.category-slider').owlCarousel({
+                    loop: true,
+                    dots: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 4,
+                            loop: false
+                        }
+                    }
+                });
             },
             error: function (xhr, textStatus, errorThrown) { 
                 $scope.searchcategories = [];
@@ -97,7 +149,7 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
         if ($.trim(Path) != "") {
             return _GlobalImagePath + "SupplierImage/" + Path;
         }
-        return "../img/no-image.png";
+        return "../img/nocategory.png";
     }
 
     $scope.GetSuppliers = function () {
@@ -108,7 +160,7 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
             success: function (data, textStatus, xhr) { 
                 $scope.Suppliers = data;
                 $scope.$apply();
-                $('.brands-slider').owlCarousel({
+                $('.customer-logos').owlCarousel({
                     loop: true,                 
                     dots: true,                      
                     responsive: {
@@ -226,7 +278,8 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
     };
 
 
-    function init() {     
+    function init() {
+        $("#mainmodel").trigger("click");
         $scope.GetCategories();
         $scope.GetFeaturedProducts(1);
         $scope.GetFeaturedProducts(2);

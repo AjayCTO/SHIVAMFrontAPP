@@ -153,7 +153,6 @@ app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', 
 
 
     var _GetWishList = function () {
-        debugger;
         var deferred = $q.defer();
         var authData = localStorageService.get('authorizationData');
         if (authData != null) {
@@ -178,26 +177,32 @@ app.factory('authService', ['$http', '$q', '$rootScope', 'localStorageService', 
     }
 
 
+
     var _RemoveFromwishList = function (ID) {
         debugger;
-        var deferred = $q.defer();
-        $.ajax({
-            url: serviceBase + 'api/WishlistDelete/DeleteWishList?id=' + ID,
-            type: 'POST',
-            dataType: 'json',
-            success: function (data) {
-                debugger;
-                if (data.success == true) {
-                    toastr.success("Success! Wishlist Updated")
-                    deferred.resolve(data);
-                }
-            },
-            error: function (data) {
-                alert("into error");
-                deferred.reject(err);
+         
+        bootbox.confirm("Are you sure you want to delete this item from Wishlist ?", function (result) {
+            if (result) {
+                var deferred = $q.defer();
+                $.ajax({
+                    url: serviceBase + 'api/WishlistDelete/DeleteWishList?id=' + ID,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        debugger;
+                        if (data.success == true) {
+                            toastr.success("Success! Wishlist Updated")
+                            deferred.resolve(data);
+                        }
+                    },
+                    error: function (data) {
+                        alert("into error");
+                        deferred.reject(err);
+                    }
+                });
+                return deferred.promise;
             }
-        });
-        return deferred.promise;
+        })
     };
 
 

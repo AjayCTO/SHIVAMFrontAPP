@@ -26,6 +26,18 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
     $scope.shoppingCart = [];
     $scope.TotalOfCartItems = 0;
 
+
+    var _localsearchtext = localStorage.getItem("Searchtext");
+    if (_localCartItems != null && _localCartItems != undefined)
+    {
+        debugger;
+        $scope.search = _localsearchtext;
+     
+    }
+    else {
+        $scope.search = "";
+    }
+
     var _localCartItems = localStorage.getItem("shoppingCart");
     if (_localCartItems != null && _localCartItems != undefined) {
         _localCartItems = JSON.parse(_localCartItems);
@@ -83,6 +95,8 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
             dataType: 'json',
             success: function (data, textStatus, xhr) {
                 $scope.searchcategories = data;
+                console.log("Category");
+                console.log($scope.searchcategories);
                 localStorage.setItem("Categories", JSON.stringify(data));
 
 
@@ -165,11 +179,20 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
 
 
 
-    $scope.GoToProductsWithCategoryID = function (ID,Name) {
+    $scope.GoToProductsWithCategoryID = function (ID, Name) {
+
+        $("#mainmodel").trigger("click");
         debugger;
-        localStorage.setItem("CategoryFilterID", ID);
-        $location.path("/Product");
-        $rootScope.$emit("CategoryID", ID, Name);
+        var url = $location.url();
+        if (url == "/Product") {
+            $rootScope.$emit("CategoryID", ID, Name);
+        }
+        else {
+            localStorage.setItem("CategoryFilterID", ID);
+            $location.path("/Product");
+            $rootScope.$emit("CategoryID", ID, Name);
+        }
+      
     }
 
     $scope.GetProductImageGlobal = function (Path) {
@@ -267,21 +290,62 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
          });
     }
 
+
+    $("#searchclear").click(function () {
+        debugger;
+        $scope.search = "";
+        $("#searchclear").css("display", "none");
+
+        $("#searching_text").trigger("click");
+
+    });
+
+
+    $("#searchclearmobile").click(function () {
+        debugger;
+        $scope.search = "";
+        $("#searchclearmobile").css("display", "none");
+
+        $("#searching_textmobile").trigger("click");
+
+    });
+
     $scope.search = "";
     $scope.Goblesearch = function (search) {
         debugger;
-        isGlobalSearchActive = true;
-        globalSearchstring = search;
-        var url = $location.url();
-        if (url == "/Product")
-        {
-            $route.reload();
+        if ($scope.search != "") {
+            $("#searchclear").css("display", "block");
+            $("#searchclearmobile").css("display", "block");
+
+            //localStorage.setItem("Searchtext", search);
+            isGlobalSearchActive = true;
+            globalSearchstring = search;
+            var url = $location.url();
+            if (url == "/Product") {
+                $route.reload();
+            }
+            else {
+                $location.path("/Product");
+            }
         }
         else {
-            $location.path("/Product");
+            $("#searchclear").css("display", "none");
+            $("#searchclearmobile").css("display", "none");
+            isGlobalSearchActive = true;
+            globalSearchstring = search;
+            var url = $location.url();
+            if (url == "/Product") {
+                $route.reload();
             }
+            else {
+                $location.path("/Product");
+            }
+        }
+        
     }
 
+
+  
     $scope.CheckisInWishList = function (ProductID)
     {
         for (var i = 0; i < $scope.CurrentWishList.length; i++) {
@@ -371,9 +435,9 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
             if (item == undefined) {
                 $scope.CartProductsCounter++;
                 var des = "";
-                var k = 15;
+                var k = 18;
                 if (product.allAttributes == undefined) {
-                    for (var i = 0; i < cols.length; i++) {
+                    for (var i = 0; i < 3 ; i++) {
 
                         if (product[k] == null || product[k] == "-") {
                             k = k + 1;
@@ -430,6 +494,13 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
         var authData = localStorageService.get('authorizationData');
         if (authData != null) {
             $scope.GetWishListfromService();
+        }
+
+        if (isGlobalSearchActive == true) {
+            debugger;
+            $("#searchclear").css("display", "block");
+            $("#searchclearmobile").css("display", "block");
+            $scope.$apply();
         }
     }
 

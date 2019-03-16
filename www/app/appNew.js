@@ -7,100 +7,120 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when("/home", {
         controller: "homeController",
-        templateUrl: "app/views/homeNew.html"
+        templateUrl: "/app/views/homeNew.html"
     });
 
     $routeProvider.when("/login", {
         controller: "loginController",
-        templateUrl: "app/views/loginNew.html"
+        templateUrl: "/app/views/loginNew.html"
     });
 
     $routeProvider.when("/signup", {
         controller: "signupController",
-        templateUrl: "app/views/signup.html"
+        templateUrl: "/app/views/signup.html"
     });
 
     $routeProvider.when("/orders", {
         controller: "ordersController",
-        templateUrl: "app/views/orders.html"
+        templateUrl: "/app/views/orders.html"
+    });
+
+    $routeProvider.when("/Category", {
+        controller: "categoryController",
+        templateUrl: "/app/views/Category.html"
     });
 
     $routeProvider.when("/refresh", {
         controller: "refreshController",
-        templateUrl: "app/views/refresh.html"
+        templateUrl: "/app/views/refresh.html"
+    });
+    $routeProvider.when("/Profile", {
+        controller: "profileController",
+        templateUrl: "/app/views/Profile.html"
     });
 
     $routeProvider.when("/tokens", {
         controller: "tokensManagerController",
-        templateUrl: "app/views/tokens.html"
+        templateUrl: "/app/views/tokens.html"
     });
 
     $routeProvider.when("/associate", {
         controller: "associateController",
-        templateUrl: "app/views/associate.html"
+        templateUrl: "/app/views/associate.html"
     });
 
     $routeProvider.when("/Merchant", {
         controller: "MerchantController",
-        templateUrl: "app/views/Merchant.html"
+        templateUrl: "/app/views/Merchant.html"
     });
     $routeProvider.when("/Billing", {
         controller: "OrderItemBillingController",
-        templateUrl: "app/views/OrderItemBilling.html"
+        templateUrl: "/app/views/OrderItemBilling.html"
     });
     $routeProvider.when("/Employee", {
         controller: "EmployeeController",
-        templateUrl: "app/views/Employee.html"
+        templateUrl: "/app/views/Employee.html"
     });
     $routeProvider.when("/Customer", {
         controller: "CustomerController",
-        templateUrl: "app/views/Customer.html"
+        templateUrl: "/app/views/Customer.html"
     });
     $routeProvider.when("/Service", {
         controller: "ServiceController",
-        templateUrl: "app/views/Service.html"
+        templateUrl: "/app/views/Service.html"
     });
     $routeProvider.when("/Task", {
         controller: "TaskController",
-        templateUrl: "app/views/Task.html"
+        templateUrl: "/app/views/Task.html"
     });
 
     $routeProvider.when("/MerchantList", {
         controller: "MerchantListController",
-        templateUrl: "app/views/MerchantList.html"
+        templateUrl: "/app/views/MerchantList.html"
     });
 
     $routeProvider.when("/Product", {
         controller: "productController",
-        templateUrl: "app/views/productNew.html"
+        templateUrl: "/app/views/productNew.html"
     });
 
     $routeProvider.when("/ShoppingCart", {
         controller: "shoppingCartController",
-        templateUrl: "app/views/shoppingCartNew.html"
+        templateUrl: "/app/views/shoppingCartNew.html"
     });
 
     $routeProvider.when("/checkout", {
         controller: "checkOutController",
-        templateUrl: "app/views/checkOutNew.html"
+        templateUrl: "/app/views/checkOutNew.html"
     });    
 
     $routeProvider.when("/Contact", {
         controller: "contactController",
-        templateUrl: "app/views/Contactus.html"
+        templateUrl: "/app/views/Contactus.html"
+    });
+    $routeProvider.when("/OrderDetails", {
+        controller: "OrderDetailsController",
+        templateUrl: "/app/views/OrderDetails.html"
     });
     $routeProvider.when("/ProductDetail", {
         controller: "ProductDetailController",
-        templateUrl: "app/views/ProductdetailsNew.html"
+        templateUrl: "/app/views/ProductDetailsNew.html"
     });
+
+    $routeProvider.when("/About", {
+        controller: "AboutusController",
+        templateUrl: "/app/views/AboutusNew.html"
+    });
+
+
     $routeProvider.when("/WishList", {
         controller: "WishListController1",
-        templateUrl: "app/views/Customerwishlist.html"
+        templateUrl: "/app/views/Customerwishlist.html"
     });
 
     $routeProvider.when("/ForgotPassword", {
         controller: "ForgotPasswordController",
-        templateUrl: "app/views/ForgotPassword.html"
+        templateUrl: "/app/views/ForgotPassword.html"
     });
 
 
