@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when("/home", {
         controller: "homeControllernew",
-        templateUrl: "/app/views/homeNew.html"
+        templateUrl: "./app/views/homeNew.html"
     });
 
     $routeProvider.when("/login", {
@@ -81,7 +81,7 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when("/Product", {
         controller: "productController",
-        templateUrl: "/app/views/productNew.html"
+        templateUrl: "./app/views/productNew.html"
     });
 
     $routeProvider.when("/ShoppingCart", {
