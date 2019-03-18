@@ -34,7 +34,7 @@
     <script src="UIKit/plugins/owlcarousel/owl.carousel.min.js"></script>
     <!--<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="../../js/sweetalert.min.js"></script>
 
     <!--<script src="js/jquery.smartWizard.js"></script>-->
     <script src="js/jquery.smartWizard.min.js"></script>
@@ -866,8 +866,8 @@
                     <div style="border-radius:100%" class="widget-header btn-group mr-3">
 
                         <input ng-model="search" class="topsearch" autocomplete="off" type="text" ng-enter="Goblesearch(search)" name="name" value="" />
-                        <span style="margin-right: 40px; display:none" id="searchclear" class="fa fa-close"></span>
-                        <span id="searching_text" class="fa fa-search" style="position: absolute; right: 14px; top: 10px; font-size: 20px; cursor:pointer" ng-click="Goblesearch(search)"> </span>
+                        <i style="margin-right: 40px; display:none" id="searchclear" class="fa fa-close"></i>
+                        <i id="searching_text" class="fa fa-search" style="position: absolute; right: 14px; top: 10px; font-size: 20px; cursor:pointer" ng-click="Goblesearch(search)"> </i>
                     </div>
 
                     <!--<div class="btn-group">
@@ -1081,7 +1081,7 @@
             <!-- Logo moblie -->
             <button style="color:#fff; font-size:14px;" onclick="window.location.href = '#/home'" class="logo-mobile">
                 <img style="" src="img/logo-colored.png" alt="IMG-LOGO">
-                <span class="logoName" style="Color:#fff!important;font-size:1.25em">SHIVSAAGAR</span>
+                <span class="logoName" style="Color:#fff!important;">SHIVSAAGAR</span>
                 <!--<img src="img/logo.png" alt="IMG-LOGO">-->
             </button>
 
@@ -1147,7 +1147,7 @@
                 <input x-webkit-speech ng-model="search" type="text" class="form-control" ng-enter="Goblesearch(search)" placeholder="Find Product" aria-label="Recipient's username" aria-describedby="basic-addon2">
               
                  <div class="input-group-append">    
-                     <span style="margin-right: 40px; display:none"  id="searchclearmobile" class="fa fa-close"></span>   
+                     <i style="margin-right: 40px; display:none"  id="searchclearmobile" class="fa fa-close"></i>   
                      <span id="searching_textmobile" ng-click="Goblesearch(search)" class="input-group-text" id="basic-addon2"> <i class="fa fa-search"></i> </span>
                 </div>
             </div>
@@ -1533,7 +1533,7 @@
         }(document, 'script'));
     </script>
 
-    <script src="js/easyzoom.js"></script>
+    <script src="../../js/easyzoom.js"></script>
     <script src="js/Myscript.js"></script>
     <!--<script>
         $(doucment).ready(function () {
