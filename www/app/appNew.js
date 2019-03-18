@@ -5,9 +5,9 @@ app.config(function ($routeProvider) {
    
 
 
-    $routeProvider.when("/home", {
+    $routeProvider.when("home", {
         controller: "homeController",
-        templateUrl: "/app/views/homeNew.html"
+        templateUrl: "app/views/homeNew.html"
     });
 
     $routeProvider.when("/login", {
