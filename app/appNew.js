@@ -6,7 +6,7 @@ app.config(function ($routeProvider) {
 
 
     $routeProvider.when("/home", {
-        controller: "homeControllernew",
+        controller: "homeController",
         templateUrl: "./app/views/homeNew.html"
     });
 
@@ -104,7 +104,7 @@ app.config(function ($routeProvider) {
     });
     $routeProvider.when("/ProductDetail", {
         controller: "ProductDetailController",
-        templateUrl: "./app/views/ProductDetailsNew.html"
+        templateUrl: "./app/views/ProductdetailsNew.html"
     });
 
     $routeProvider.when("/About", {
