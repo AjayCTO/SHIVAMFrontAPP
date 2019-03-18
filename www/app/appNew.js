@@ -124,7 +124,7 @@ app.config(function ($routeProvider) {
     });
 
 
-    $routeProvider.otherwise({ redirectTo: "/home" });
+    $routeProvider.otherwise({ redirectTo: "home" });
 
 });
 //var serviceBase = 'http://localhost:26264/';
