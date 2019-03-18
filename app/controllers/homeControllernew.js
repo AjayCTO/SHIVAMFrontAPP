@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('homeController', ['$scope', '$rootScope', 'localStorageService', '$location', function ($scope, $rootScope, localStorageService, $location)
+app.controller('homeControllernew', ['$scope', '$rootScope', 'localStorageService', '$location', function ($scope, $rootScope, localStorageService, $location)
 {
 
     alert("in home");

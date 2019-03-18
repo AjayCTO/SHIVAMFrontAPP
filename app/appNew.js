@@ -6,7 +6,7 @@ app.config(function ($routeProvider) {
 
 
     $routeProvider.when("/home", {
-        controller: "homeController",
+        controller: "homeControllernew",
         templateUrl: "/app/views/homeNew.html"
     });
 

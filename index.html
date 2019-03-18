@@ -843,7 +843,7 @@
     </style>
   
 </head>
-<body class="animsition bg2" ng-app="AngularAuthApp" ng-controller="indexController" ng-cloak>
+<body data-ng-app="AngularAuthApp" data-ng-controller="indexController" >
     <!-- section-header.// -->
 
     <header class="header2 bg2" ng-cloak>
@@ -1383,12 +1383,10 @@
     <div class="mobile-margin visible-xs"></div>
 
     <!-- ========================= SECTION CONTENT ========================= -->
-    <route-loading-indicator></route-loading-indicator>
-    <section class="section-content" ng-if="!isRouteLoading" data-ng-view="" style="margin-top: -18px;"></section>
+  
+    <div data-ng-view="" style="margin-top: -18px;"></div>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     <!-- ========================= FOOTER ========================= -->
-
-
 
 
 
