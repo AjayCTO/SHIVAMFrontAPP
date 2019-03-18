@@ -34,7 +34,7 @@
     <script src="UIKit/plugins/owlcarousel/owl.carousel.min.js"></script>
     <!--<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="../../js/sweetalert.min.js"></script>
 
     <!--<script src="js/jquery.smartWizard.js"></script>-->
     <script src="js/jquery.smartWizard.min.js"></script>
@@ -843,7 +843,7 @@
     </style>
   
 </head>
-<body data-ng-app="AngularAuthApp" data-ng-controller="indexController" >
+<body class="animsition bg2" ng-app="AngularAuthApp" ng-controller="indexController" ng-cloak>
     <!-- section-header.// -->
 
     <header class="header2 bg2" ng-cloak>
@@ -1383,11 +1383,14 @@
     <div class="mobile-margin visible-xs"></div>
 
     <!-- ========================= SECTION CONTENT ========================= -->
-  
-    <div data-ng-view=""></div>
-
+    <route-loading-indicator></route-loading-indicator>
+    <section class="section-content" ng-if="!isRouteLoading" data-ng-view="" style="margin-top: -18px;"></section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     <!-- ========================= FOOTER ========================= -->
+
+
+
+
 
 
     <footer ng-if="!isRouteLoading" class="bg6 p-t-45 p-b-43">
@@ -1530,7 +1533,7 @@
         }(document, 'script'));
     </script>
 
-    <script src="js/easyzoom.js"></script>
+    <script src="../../js/easyzoom.js"></script>
     <script src="js/Myscript.js"></script>
     <!--<script>
         $(doucment).ready(function () {
@@ -1593,7 +1596,6 @@
     <script src="scripts/toastr.js"></script>
     <script src="scripts/bootbox.min.js"></script>
     <!-- Load app main script -->
-    <script type="text/javascript" src="cordova.js"></script>
     <script src="app/appNew.js?v=2"></script>
 
     <!-- Load services -->
@@ -1602,8 +1604,6 @@
     <script src="app/services/ordersService.js?v=2"></script>
     <script src="app/services/tokensManagerService.js?v=2"></script>
     <!-- Load controllers -->
-
-
     <script src="app/controllers/indexControllernew.js?v=2"></script>
     <script src="app/controllers/homeControllernew.js?v=2"></script>
     <script src="app/controllers/loginControllerNew.js?v=2"></script>

@@ -1,8 +1,6 @@
 ﻿'use strict';
-app.controller('homeControllernew', ['$scope', '$rootScope', 'localStorageService', '$location', function ($scope, $rootScope, localStorageService, $location)
+app.controller('homeController', ['$scope', '$rootScope', 'localStorageService', '$location', function ($scope, $rootScope, localStorageService, $location)
 {
-
-    alert("in home");
     
     $scope.Isloadingcat = false;
     $scope.searchcategoriesslider = [];
@@ -66,9 +64,6 @@ app.controller('homeControllernew', ['$scope', '$rootScope', 'localStorageServic
         });
 
     $scope.GetCategories = function () {
-
-        alert("In cat1");
-
         debugger;
         $scope.Isloadingcat = true;
         $.ajax({

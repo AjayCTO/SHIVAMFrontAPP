@@ -1,7 +1,6 @@
 ﻿'use strict';
 app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorageService', '$location', 'authService', function ($scope,$route, $rootScope, localStorageService, $location, authService) {
 
-    alert("In Index contreoller");
 
     $scope.$on('$routeChangeStart', function ($event, next, current) {
         $(".wrap-side-menu").removeClass("show2").addClass("hideM");
@@ -89,7 +88,6 @@ app.controller('indexController', ['$scope','$route', '$rootScope', 'localStorag
 
  
     $scope.GetCategories = function () {
-        alert("Get category");
         $scope.loadallcat = false;
         $.ajax({
             url: serviceBase + '/api/Categories/GetCategories',
