@@ -5,9 +5,9 @@ app.config(function ($routeProvider) {
    
 
 
-    $routeProvider.when("home", {
+    $routeProvider.when("/home", {
         controller: "homeController",
-        templateUrl: "app/views/homeNew.html"
+        templateUrl: "/app/views/homeNew.html"
     });
 
     $routeProvider.when("/login", {
@@ -124,7 +124,7 @@ app.config(function ($routeProvider) {
     });
 
 
-    $routeProvider.otherwise({ redirectTo: "home" });
+    $routeProvider.otherwise({ redirectTo: "/home" });
 
 });
 //var serviceBase = 'http://localhost:26264/';
