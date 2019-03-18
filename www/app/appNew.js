@@ -127,7 +127,6 @@ app.config(function ($routeProvider) {
     $routeProvider.otherwise({ redirectTo: "/home" });
 
 });
-
 //var serviceBase = 'http://localhost:26264/';
 //var _GlobalImagePath = "http://localhost:7080/";
 
