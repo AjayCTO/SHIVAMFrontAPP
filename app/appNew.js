@@ -5,9 +5,9 @@ app.config(function ($routeProvider) {
    
 
 
-    $routeProvider.when("/home", {
+    $routeProvider.when("home", {
         controller: "homeController",
-        templateUrl: "/app/views/homeNew.html"
+        templateUrl: "app/views/homeNew.html"
     });
 
     $routeProvider.when("/login", {
@@ -15,9 +15,9 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/loginNew.html"
     });
 
-    $routeProvider.when("/signup", {
+    $routeProvider.when("signup", {
         controller: "signupController",
-        templateUrl: "/app/views/signup.html"
+        templateUrl: "app/views/signup.html"
     });
 
     $routeProvider.when("/orders", {
@@ -124,7 +124,7 @@ app.config(function ($routeProvider) {
     });
 
 
-    $routeProvider.otherwise({ redirectTo: "/home" });
+    $routeProvider.otherwise({ redirectTo: "home" });
 
 });
 //var serviceBase = 'http://localhost:26264/';
