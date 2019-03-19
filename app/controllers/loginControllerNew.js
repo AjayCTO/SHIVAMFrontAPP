@@ -6,9 +6,25 @@ app.controller('loginController', ['$scope', '$rootScope', '$location', 'authSer
         useRefreshTokens: false
     };
 
+
+    $scope.IsNewCreate = false;
     $scope.loading = false;
     $scope.message = "";
     $scope.isDisabled = false;
+
+
+
+
+
+    // Create account form show
+
+    $scope.CreateAccount=function(){
+        $scope.IsNewCreate = true;
+    }
+
+    $scope.SingupAccount = function () {
+        $scope.IsNewCreate = false;
+    }
 
     $scope.login = function (ID) {
         debugger;

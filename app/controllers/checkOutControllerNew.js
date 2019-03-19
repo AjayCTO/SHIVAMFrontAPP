@@ -2,7 +2,9 @@
 app.controller('checkOutController', ['$scope', '$rootScope', '$location', '$route', 'localStorageService', 'authService', function ($scope, $rootScope, $location, $route,localStorageService, authService) {
     $scope.authentication = authService.authentication;
     $scope.Cities = [];
-    $scope.emailvalidation = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+    $scope.emailvalidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    //$scope.emailvalidation = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
     $scope.ccinfo = { type: "fa fa-credit-card" }
     $scope.CurrentTab = 1;
     $scope.shipping = 0;
