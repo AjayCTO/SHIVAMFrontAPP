@@ -42,13 +42,13 @@
       <preference name="SplashStatusBarBackgroundColor" value="#0d47a1" />     
       <icon density="ldpi" src="res/icon/android/screen-ldpi-portrait.png" />
       <icon density="mdpi" src="res/icon/android/screen-mdpi-portrait.png" />
-      <icon density="hdpi" src="res/icon/android/screen-hdpi-portrait.png" />
+      <icon density="hdpi" src="res/icon/android/screen-hdpi-portrait1.png" />
       <icon density="xhdpi" src="res/icon/android/screen-xhdpi-portrait.png" />
       <icon density="xxhdpi" src="res/icon/android/drawable-xxhdpi-icon.png" />
       <icon density="xxxhdpi" src="res/icon/android/drawable-xxxhdpi-icon.png" />        
       <gap:splash src="res/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
       <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
-      <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
+      <gap:splash src="res/screen/android/screen-hdpi-portrait1.png"  gap:platform="android" gap:density="hdpi" />
       <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />     
    </platform>
     <platform name="ios">
