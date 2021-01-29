@@ -54,60 +54,74 @@
         left: 0;
         display: none;
     }
+
+    .imgsize{
+        max-height:500px;
+        min-width:300px
+    }
 </style>
  
-<!--<section class="bg2">
-   
-    <div class="container BannerImg">
-        <img style="width:100%;" src="../../img/shopping.jpeg" alt="Alternate Text" />
-    </div>
-   
-</section>-->
-<!--<section class="slide1">
-    <div class="wrap-slick1">
-        <div class="slick1">
-            <div ng-repeat="image in searchcategories" class="item-slick1 item{{index+1}}-slick1" style="background-image: url('http://localhost:7080/CategoryImage/{{image.categoryImage}}');">
-                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    <span class="caption1-slide1 m-text1 t-center animated   m-b-15" data-appear="fadeInDown">
-                       {{image.description}}
-                    </span>
+<section class="bg2">
+    <!--<div id="demo" class="carousel slide" data-ride="carousel">
 
-                    <h2 class="caption2-slide1 xl-text1 t-center animated   m-b-37" data-appear="fadeInUp">
-                        {{image.categoryName}}
-                    </h2>
-
-                    <div class="wrap-btn-slide1 w-size1 animated  " data-appear="zoomIn">
-                 
-
-                        <a href="#/Product" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                            Shop Now 
-                        </a>
-                    </div>
-                </div>
+      
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+            <li data-target="#demo" data-slide-to="4"></li>
+        </ul>-->
+      
+        <!-- The slideshow -->
+        <!--<div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="imgsize"src="../../img/banner-02.jpg" alt="Los Angeles">
+                <img class="imgsize" src="../../img/banner-03.jpg" alt="Chicago">
             </div>
+            <div class="carousel-item">
+                <img class="imgsize" src="../../img/banner-03.jpg" alt="Chicago">
+            </div>
+            <div class="carousel-item">
+                <img class="imgsize" src="../../img/banner-04.jpg" alt="New York">
+            </div>
+            <div class="carousel-item">
+                <img class="imgsize" src="../../img/banner-05.jpg" alt="New York">
+            </div>
+            <div class="carousel-item">
+                <img class="imgsize" src="../../img/banner-07.jpg" alt="New York">
+            </div>
+        </div>-->
 
+        <!-- Left and right controls -->
+        <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>-->
 
-
-        </div>
     </div>
-</section>-->
+    <!--<div class="container BannerImg">
+        <img style="width:100%;" src="../../img/shopping.jpeg" alt="Alternate Text" />
+    </div>-->
+   
+</section>
 
+<div class="section-content my-padding bg" ng-if="Isloadingcat&&loadfeatured==false&&loadtop==false&&loadmostsale==false">
+    <div style="text-align:center;">
+        <img src="img/ajax_loading.gif" width="100" />
+    </div>
 
-<section class="section-content padding-y-sm bg" ng-repeat="cat in searchcategories" >
+</div>
+
+<section class="section-content my-padding bg" ng-repeat="cat in searchcategories">
     <div class="container">
 
         <header class="section-heading heading-line" ng-if="cat.categories1.length>0">
-            <h4 class="title-section bg">  {{cat.categoryName}}</h4>
+            <h5 class="title-section bg">  {{cat.categoryName}}</h5>
         </header>
-        <div ng-show="Isloadingcat==true">
-
-
-            <div style="text-align:center;">
-                <img src="../img/ajax_loading.gif" width="100" />
-            </div>
-
-
-        </div>
+       
         <div class="sliderarrow" ng-if="cat.categories1.length>0">
             <i class="fa fa-chevron-left"></i>
             <i style="float:right" class="fa fa-chevron-right"></i>
@@ -115,9 +129,8 @@
 
         <div class="row no-gutters">
             <div class="owl-carousel owl-init category-slider">
-                <div class="item-slide" ng-repeat="subcat in cat.categories1">
-                    
-                    <figure class="card card-product" ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)">
+                <div class="item-slide" ng-repeat="subcat in cat.categories1" ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)">
+                    <figure class="card card-product">
 
                         <div class="img-wrap" style="cursor:pointer">
                             <img class="card-img-top" src="{{GetcatBgImage(subcat.categoryImage)}}" alt="">
@@ -140,17 +153,25 @@
 </section>
 
 
-<section class="section-content padding-y-sm bg">
+
+
+
+
+
+<!--<div class="section-content bg" ng-show="loadfeatured==false">
+    <div style="text-align:center;">
+        <img src="../img/ajax_loading.gif" width="100" />
+    </div>
+</div>-->
+
+<section class="section-content bg" ng-if="pagedItems.length>0">
     <div class="container">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section bg">Our Featured Picks</h4>
+            <h5 class="title-section bg">Our Featured Picks</h5>
         </header>
-        <div ng-show="loadfeatured==false">
-            <div style="text-align:center;">
-                <img src="../img/ajax_loading.gif" width="100" />
-            </div>
-        </div>
+
+       
         <div class="sliderarrow">
             <i class="fa fa-chevron-left"></i>
             <i style="float:right" class="fa fa-chevron-right"></i>
@@ -159,7 +180,7 @@
         <div class="row no-gutters">
             <div class="owl-carousel owl-init products-slider">
                 <div class="item-slide" ng-repeat="x in pagedItems">
-                    <figure class="card card-product">
+                    <figure class="card card-product" ng-click="SetProduct(x)">
                         <span class="badge-new"> {{x[5]|currency:"₹ "}} </span>
                         <div class="img-wrap" style="cursor:pointer" ng-click="SetProduct(x)">
                             <img class="card-img-top" src="{{GetProductImage(x[13])}}" alt="{{x[9]}}">
@@ -182,23 +203,23 @@
         </div> <!-- row.// -->
 
 
-        
+
     </div> <!-- container .//  -->
 </section>
+<!--<div class="section-content padding-y-sm bg"ng-show="loadtop==false">
+    <div style="text-align:center;">
+        <img src="../img/ajax_loading.gif" width="100" />
+    </div>
+</div>-->
 
-
-<section class="section-content padding-y-sm bg">
+<section class="section-content padding-y-sm bg" ng-if="TopRatedItems.length>0">
     <div class="container">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section bg">Top Rated Picks</h4>
+            <h5 class="title-section bg">Top Rated Picks</h5>
         </header>
 
-        <div ng-show="loadtop==false">
-            <div style="text-align:center;">
-                <img src="../img/ajax_loading.gif" width="100" />
-            </div>
-        </div>
+   
 
 
         <div class="sliderarrow">
@@ -211,7 +232,7 @@
 
 
                 <div class="item-slide" ng-repeat="x in TopRatedItems">
-                    <figure class="card card-product">
+                    <figure class="card card-product" ng-click="SetProduct(x)">
                         <span class="badge-new"> {{x[5]|currency:"₹ "}} </span>
                         <div class="img-wrap" style="cursor:pointer" ng-click="SetProduct(x)">
                             <img class="card-img-top" src="{{GetProductImage(x[13])}}" alt="{{x[9]}}">
@@ -234,23 +255,23 @@
     </div> <!-- container .//  -->
 </section>
 
+<!--<div class="section-content padding-y-sm bg" ng-show="loadmostsale==false">
 
+
+    <div style="text-align:center;">
+        <img src="../img/ajax_loading.gif" width="100" />
+    </div>
+
+
+</div>-->
 <section class="section-content padding-y-sm bg" ng-if="MostSaledItems.length>0">
     <div class="container">
 
         <header class="section-heading heading-line">
-            <h4 class="title-section bg">Most Saled Picks</h4>
+            <h5 class="title-section bg">Most Saled Picks</h5>
         </header>
 
-        <div ng-show="loadmostsale==false">
-
-
-            <div style="text-align:center;">
-                <img src="../img/ajax_loading.gif" width="100" />
-            </div>
-
-
-        </div>
+    
         <div class="sliderarrow">
             <i class="fa fa-chevron-left"></i>
             <i style="float:right" class="fa fa-chevron-right"></i>
@@ -258,7 +279,7 @@
         <div class="row no-gutters">
             <div class="owl-carousel owl-init mostsaled-slider">
                 <div class="item-slide" ng-repeat="x in MostSaledItems">
-                    <figure class="card card-product">
+                    <figure class="card card-product" ng-click="SetProduct(x)">
                         <span class="badge-new"> {{x[5]|currency:"₹ "}} </span>
                         <div class="img-wrap" style="cursor:pointer" ng-click="SetProduct(x)">
                             <img class="card-img-top" src="{{GetProductImage(x[13])}}" alt="{{x[9]}}">

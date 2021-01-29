@@ -139,28 +139,22 @@
                     <div class="rating-wrap">
 
                         <!--<ul class="rating-stars">
-            <li style="width:80%" class="stars-active">
-                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </li>
-            <li>
-                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </li>
-        </ul>-->
+                        <li style="width:80%" class="stars-active">
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </li>
+                        <li>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </li>
+                    </ul>-->
                         <div class="label-rating"><a href="" ng-click="reviewModal()">{{product.reviews.length}} Reviews</a></div>
 
                     </div>
-                   
                     <span class="m-text17" style="font-weight: 600; Color: #212529;">
-                        <!--<div class="price">
-                             {{x[5]-x[5]*x[16]/100|currency:"₹ "}}
-                               <del class="price-old" ng-if="x[16]>0">{{x[5]|currency:"₹ "}}</del>
-                         </div>-->
-                        
-                        {{product.ProductCost}}
+                        {{product.ProductCost|currency:"₹ "}}
                     </span>
 
                     <p class="s-text8 p-t-10">

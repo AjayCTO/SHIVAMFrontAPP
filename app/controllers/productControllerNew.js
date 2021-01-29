@@ -2,7 +2,7 @@
 app.controller('productController', ['$scope', '$rootScope', '$location', function ($scope, $rootScope, $location) {
     $scope.AllAttributeFilters = [];
     $scope.Attributes = [];
-    $scope.currentMode = false;
+    $scope.currentMode = true;
     $scope.AttributesValue = [];
     $scope.AttributesAllValue = [];
     $scope.AllProductsColumns = [];

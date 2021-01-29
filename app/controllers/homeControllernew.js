@@ -27,7 +27,7 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
 
 
     $scope.GoToProductsWithCategoryID = function (ID, Name) {
-       
+        debugger;
         var url = $location.url();
         if (url == "/Product") {
             $rootScope.$emit("CategoryID", ID, Name);
@@ -64,55 +64,33 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
         });
 
     $scope.GetCategories = function () {
-        
+        debugger;
         $scope.Isloadingcat = true;
         $.ajax({
             url: serviceBase + 'api/Categories/GetCategories',
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
-                debugger;
                 $scope.searchcategories = data;
                 console.log($scope.searchcategories);
                 $scope.Isloadingcat = false;
                 $scope.$apply();
-                setTimeout(function () {
-
-                     
-                    $('.slick1').slick({
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        fade: true,
-                        dots: true,
-                        appendDots: $('.wrap-slick1-dots'),
-                        dotsClass: 'slick1-dots',
-                        infinite: true,
-                        autoplay: true,
-                        autoplaySpeed: 6000,
-                        arrows: true,
-                        appendArrows: $('.wrap-slick1'),
-                        prevArrow: '<button class="arrow-slick1 prev-slick1"><i class="fa  fa-angle-left" aria-hidden="true"></i></button>',
-                        nextArrow: '<button class="arrow-slick1 next-slick1"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',
-                    });
-
-                     
-                    $('.category-slider').owlCarousel({
-                        loop: true,
-                        dots: true,
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            600: {
-                                items: 2
-                            },
-                            1000: {
-                                items: 4,
-                                loop: false
-                            }
+                $('.category-slider').owlCarousel({
+                    loop: true,
+                    dots: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 4,
+                            loop: false
                         }
-                    });
-                }, 1000);
+                    }
+                });
             },
             error: function (xhr, textStatus, errorThrown) { 
                 $scope.searchcategories = [];
@@ -130,7 +108,7 @@ app.controller('homeController', ['$scope', '$rootScope', 'localStorageService',
 
     $scope.SetProduct = function (product)
     {
-        
+        debugger;
         localStorage.setItem("ProductDetail", JSON.stringify(product));
         localStorage.setItem("ProductAttribute", JSON.stringify($scope.AllProductsColumns));
         $location.path('/ProductDetail');

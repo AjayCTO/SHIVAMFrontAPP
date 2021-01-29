@@ -50,7 +50,7 @@
     }
     .card-group-item .card-header {
         border-bottom: 0;
-        background-color: #e3010f !important;
+        background-color: #0d47a1;
     }
 
 
@@ -157,10 +157,13 @@
         }
 
         .card-group-item .card-header {
-            background-color: #e3010f!important;
+            /* border-bottom: 0; */
+            background-color: #e3010f;
         }
 
-      
+        .card-header .title {
+            color: white;
+        }
         /*header.card-header
         {
             background-color:#f1f1f1 !important;
@@ -284,23 +287,19 @@
             margin: 0 0 1px;
         }
 
-    .viewdetail {
-        /*width: 175px;*/
-        display: block;
-        margin: 0 auto;
-        /* margin: 12px; */
-        text-align: center;
-        /*padding: 0px;*/
-        margin-top: 8px;
-        border: 1px solid #069;
-        margin-bottom: 10px;
-        font-size: 14px;
-        cursoz !important;
-    }
-
-    .card-header .title {
-        color: white !important;
-    }
+        .viewdetail {
+            /*width: 175px;*/
+            display: block;
+            margin: 0 auto;
+            /* margin: 12px; */
+            text-align: center;
+            /*padding: 0px;*/
+            margin-top: 8px;
+            border: 1px solid #069;
+            margin-bottom: 10px;
+            font-size: 14px;
+            cursor:pointer;
+        }
 </style>
 
 
