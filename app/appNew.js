@@ -9,7 +9,6 @@ app.config(function ($routeProvider) {
         controller: "homeController",
         templateUrl: "./app/views/homeNew.html"
     });
-
     $routeProvider.when("/login", {
         controller: "loginController",
         templateUrl: "./app/views/loginNew.html"
@@ -107,7 +106,7 @@ app.config(function ($routeProvider) {
         templateUrl: "./app/views/ProductdetailsNew.html"
     });
 
-    $routeProvider.when("/About", {
+    $routeProvider.when("/AboutMoto", {
         controller: "AboutusController",
         templateUrl: "./app/views/AboutusNew.html"
     });
@@ -129,10 +128,6 @@ app.config(function ($routeProvider) {
 });
 //var serviceBase = 'http://localhost:26264/';
 //var _GlobalImagePath = "http://localhost:7080/";
-
-//var serviceBase = 'http://shivamface.shivamitconsultancy.com/';
-//var _GlobalImagePath = "http://shivamonline.shivamitconsultancy.com/";
-
 var serviceBase = 'https://api.shivamitconsultancy.com/';
 var _GlobalImagePath = "https://admin.shivamitcs.in/";
 

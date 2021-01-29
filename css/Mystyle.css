@@ -63,7 +63,7 @@
         }
 
   .topsearch {
-            width: 515px;
+            width: 260px;
             height: 42px;
             border-radius: 42px;
             -webkit-transition: width 0.4s ease-in-out;
@@ -423,7 +423,7 @@
         border: 1px solid #eceef1;
         padding: 4px 10px;
         /* border-radius: 13px; */
-        /*color: #2c387e;*/
+        color: #fff;
     }
     .list-group.list-group-root {
         padding: 0;

@@ -1,7 +1,7 @@
 ﻿'use strict';
 app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'localStorageService', '$location', 'authService', function ($scope,$route, $rootScope, localStorageService, $location, authService) {
     $scope.authentication = authService.authentication;
-    $scope.Quantity = 1;
+    $scope.Quantity = 2;
     $scope.product = [];
     $scope.Images = [];
     $scope.CurrentWishList = [];
@@ -12,6 +12,7 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
     $scope.Selproattr = [];
     $scope.myselected = '';
     $scope.IsProductLoading = false;
+    //$scope.NewPrice = ProductCost
     $scope.ItemCartQuantity = 0;
     $scope.AllProductsColumns = [];
 
@@ -188,7 +189,8 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
                             ProductCounter = ProductCounter + 1;
                             if ($scope.SelecteditemDetail.length == ProductCounter) {
                                 $scope.product.Images = $scope.similarproduct[i].productImage;
-                                $scope.product.ProductCost = $scope.similarproduct[i].productAttrubutes[k].price;
+                                 var decimalremover = $scope.similarproduct[i].productAttrubutes[k].price;
+                                $scope.product.ProductCost = Math.trunc(decimalremover);
                                 $scope.product.ProductQuantity = $scope.similarproduct[i].productAttrubutes[k].quantity;
                                 $scope.product.ProductId = $scope.similarproduct[i].productAttrubutes[k].prID;
                                 $scope.product.ProductReviews = 0;
@@ -352,7 +354,7 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
                 $scope.RelatedProducts = data.aaData;         
                 $scope.$apply();
                 $(".owl-carousel.owl-theme.GetRelatedPrdoucts").owlCarousel({
-
+                            
                      //Show next and prev buttons
                     dots: false,
                     items: $scope.RelatedProducts.length,
@@ -504,6 +506,7 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
         if ($scope.Quantity > 1)
         {
             $scope.Quantity = $scope.Quantity - 1;
+             //$scope.NewPrice = $scope.NewPrice - $scope.product.ProductCost
             $(this).next().val($scope.Quantity);
         }
          
@@ -514,6 +517,7 @@ app.controller('ProductDetailController', ['$scope', '$route','$rootScope', 'loc
         e.preventDefault();
         $scope.Quantity = Number($(this).prev().val());
         $scope.Quantity = $scope.Quantity + 1;
+        //$scope.NewPrice = $scope.NewPrice + $scope.product.ProductCost
         $(this).prev().val($scope.Quantity);
     });
 

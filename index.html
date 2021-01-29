@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="SHIVAM ITCS">
-    <title>ShivSaagar Online</title>
+    <title>Moto Bazar</title>
 
     <link href="UIKit/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <!--Datatable css-->
@@ -23,18 +23,18 @@
     <link href="css/smart_wizard.css" rel="stylesheet" />
     <link href="css/smart_wizard_theme_dots.css" rel="stylesheet" type="text/css" />
     <!-- jQuery -->
+    <link href="vendor/slick/slick.css" rel="stylesheet" />
     <!--<script src="js/jquery-3.2.1.min.js"></script>-->
     <!-- Bootstrap4 files-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
     <script src="UIKit/js/jquery-3.3.1.min.js"></script>
     <script src="UIKit/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-
 
     <!--Datatable js-->
     <script src="UIKit/plugins/owlcarousel/owl.carousel.min.js"></script>
     <!--<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="../../js/sweetalert.min.js"></script>
 
     <!--<script src="js/jquery.smartWizard.js"></script>-->
     <script src="js/jquery.smartWizard.min.js"></script>
@@ -106,13 +106,12 @@
         function myFunction() {
 
             if (window.pageYOffset > sticky) {
-                $("#myHeader").removeClass("bg2")
-
+               
                 $("#myHeader").addClass("sticky")
 
 
             } else {
-                $("#myHeader").addClass("bg2")
+             
                 $("#myHeader").removeClass("sticky")
 
 
@@ -161,107 +160,11 @@
 
     <style>
 
-        Body {
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-        }
-        .main_menu > li > a {
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-            font-weight:600;
-         
-             }
 
-        .dropdown-item {
-        font-weight:600!important
-        }
-
-
-
-
-
-        a {
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-            font-weight: 600;
-            color: #606267 !important;
-        }
-        p {
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-            font-weight: 600;
-            color: #606267 !important;
-        }
-
-        h4, h6,h5, label, strong,span {
-            color: #606267;
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-        }
-
-
-       h6,label, strong {
-            font-weight: bold !important;
-        }
-
-        .list-group-item.active {
-            background-color: #0d47a1 !important;
-            border-color: #0d47a1 !important;
-        }
-
-        .card-header .title {
-            /*font-weight: bold !important;*/
-            color: #fff !important;
-        }
-
-        .WhiteColor {
-            color:#fff!Important;
-        }
-
-        .main_menu > li:hover > a {
-            border-bottom: none !important;
-            box-shadow: none !important;
-        }
-        .main_menu > li > a {
-            border-bottom: none !important;
-        }
-
-
-        .main_menu > li:hover {
-            border-bottom: none !important;
-            box-shadow: none !important;
-        }
-        small{
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-            font-weight: 600;
-        }
-
-        /*.main_menu > li > a .list-group-item.active {
-            background-color: #0d47a1;
-            color: #fff;
-        }*/
-        .card-header {
-            border-bottom: 0;
-            background-color: #0d47a1 !important;
-            color: #fff;
-        }
-        .ptag{
-            color:#fff;
-            font-size:12px
-        }
-        svg {
-            height:15px;
-        }
-        /*.fa {
-            color: #0d47a1;
-        }*/
-        a:hover {
-            color: #888 !important;
-        }
-        .btn-primary {
-            background-color: #0d47a1!important;
-            color:#fff!important;
-        }
         .modal-backdrop {
-
-            background-color:black;
+            background-color: black;
         }
-        
+
         .show2 {
             display: block !important;
             animation: slide-down 0.8s;
@@ -283,8 +186,7 @@
             width: 100%;
             z-index: 1000;
             animation: slide-down 0.5s;
-            background-color: #0d47a1;
-            box-shadow: 10px 10px 10px #b5b5b5;
+            background-color: #e3010f;
         }
 
             .sticky .header-icons {
@@ -299,6 +201,7 @@
         .sticky a {
             color: #fff !important;
         }
+
         .sticky .dropdown-menu a {
             color: black !important;
         }
@@ -334,11 +237,11 @@
 
         .logo2 img {
             max-height: 45px;
+            margin-right: 6rem;
         }
 
         .stickylogo {
             height: 50px;
-            width: 50px;
             float: initial;
             position: absolute;
             left: 24px;
@@ -431,7 +334,7 @@
             z-index: 1000;
             min-height: 60px;
             padding-bottom: 0;
-            background-color: #0d47a1;
+            background-color: #e3010f;
         }
 
             .wrap_header_mobile .widget-header {
@@ -453,9 +356,9 @@
             margin-top: 8px;
         }
 
-        /*.item-menu-mobile {
-            background-color: #3f51b5;
-        }*/
+        .item-menu-mobile {
+            background-color: red;
+        }
 
         .searcharea .form-control {
             border-radius: 25px !important;
@@ -485,12 +388,6 @@
             background-color: #2c387e;
             color: #fff;
         }
-        .bg {
-            background-color: #eceded !important;
-        }
-        .bg2 {
-            background-color: #eceded !important;
-        }
 
         .noradius {
             border-radius: 0 !important;
@@ -504,13 +401,6 @@
 
         .list-group-item.active {
             color: #fff !important;
-        }
-        .my-padding {
-            padding-top: 35px;
-            padding-bottom: 35px;
-            z-index: 100;
-            position: relative;
-            border-top: 1px solid #d4d3d3;
         }
     </style>
     <style>
@@ -532,7 +422,6 @@
             .breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
                 display: inline-block;
                 vertical-align: top;
-               
             }
 
                 .breadcrumb-arrow li:not(:first-child) {
@@ -546,7 +435,6 @@
 
                 .breadcrumb-arrow li span {
                     padding: 0 10px;
-                   
                 }
 
                 .breadcrumb-arrow li a, .breadcrumb-arrow li:not(:first-child) span {
@@ -655,19 +543,19 @@
             width: 0;
             position: fixed;
             z-index: 10000;
-            top: 0;
+            top: 20px;
             right: 0;
-            background-color: white;
+            background-color: #ffeb02;
             overflow-x: hidden;
             transition: 0.5s;
-            padding-top: 60px;
+            padding-top: 20px;
         }
 
             .sidenav2 a {
-                padding: 8px 8px 8px 32px;
+                padding: 14px 14px 4px 15px;
                 text-decoration: none;
-                font-size: 16px;
-                color: #292727;
+                font-size: 13px;
+                color: #818181;
                 display: block;
                 transition: 0.3s;
             }
@@ -676,204 +564,55 @@
                     color: #f1f1f1;
                 }
 
-        .sidenav2 .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
+            .sidenav2 .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
 
         @media screen and (max-height: 450px) {
-            /*.sidenav2 {
-                padding-top: 15px;
-            }*/
+            .sidenav2 {
+                padding-top: 10px;
+            }
 
                 .sidenav2 a {
-                    font-size: 18px;
+                    font-size: 12px;
                 }
         }
 
-
-
-
-        .slick-slide {
-            margin: 0px 20px;
-        }
-
-            .slick-slide img {
-                width: 100%;
-            }
-
-        .slick-slider {
-            position: relative;
-            display: block;
-            box-sizing: border-box;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
-            -khtml-user-select: none;
-            -ms-touch-action: pan-y;
-            touch-action: pan-y;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .slick-list {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-            .slick-list:focus {
-                outline: none;
-            }
-
-            .slick-list.dragging {
-                cursor: pointer;
-                cursor: hand;
-            }
-
-        .slick-slider .slick-track,
-        .slick-slider .slick-list {
-            -webkit-transform: translate3d(0, 0, 0);
-            -moz-transform: translate3d(0, 0, 0);
-            -ms-transform: translate3d(0, 0, 0);
-            -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-        }
-
-        .slick-track {
-            position: relative;
-            top: 0;
-            left: 0;
-            display: block;
-        }
-
-            .slick-track:before,
-            .slick-track:after {
-                display: table;
-                content: '';
-            }
-
-            .slick-track:after {
-                clear: both;
-            }
-
-        .slick-loading .slick-track {
-            visibility: hidden;
-        }
-
-        .slick-slide {
-            display: none;
-            float: left;
-            height: 100%;
-            min-height: 1px;
-        }
-
-        [dir='rtl'] .slick-slide {
-            float: right;
-        }
-
-        .slick-slide img {
-            display: block;
-        }
-
-        .slick-slide.slick-loading img {
-            display: none;
-        }
-
-        .slick-slide.dragging img {
-            pointer-events: none;
-        }
-
-        .slick-initialized .slick-slide {
-            display: block;
-        }
-
-        .slick-loading .slick-slide {
-            visibility: hidden;
-        }
-
-        .slick-vertical .slick-slide {
-            display: block;
-            height: auto;
-            border: 1px solid transparent;
-        }
-
-        .slick-arrow.slick-hidden {
-            display: none;
-        }
-        #searchinput {
-            width: 200px;
-        }
-
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: none;
-        }
-
-        #searchclear {
-            position: absolute;
-            right: 5px;
-            top: 0;
-            bottom: 0;
-            height: 14px;
-            margin: auto;
-            font-size: 14px;
-            cursor: pointer;
-            color: #ccc;
-        }
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-            display: none !important;
-        }       
-        #searchclearmobile {
-            position: absolute;
-            right: 5px;
-            top: 0;
-            bottom: 0;
-            height: 14px;
-            margin: auto;
-            font-size: 14px;
-            cursor: pointer;
-            color: #ccc;
+        .card-header {
+            background-color: #e3010f;
         }
     </style>
-  
 </head>
-<body class="animsition bg2" ng-app="AngularAuthApp" ng-controller="indexController" ng-cloak>
+<body class="animsition" ng-app="AngularAuthApp" ng-cloak>
     <!-- section-header.// -->
 
-    <header class="header2 bg2" ng-cloak>
+    <header class="header2" ng-controller="indexController">
         <!-- Header desktop -->
         <div class="container container-menu-header-v2 p-t-26">
-            <div class="topbar2 bg2" style="margin-left: -9px;">
-                <!--<div class="topbar-social">
-            <a href="#" class="topbar-social-item fa fa-facebook"></a>
-            <a href="#" class="topbar-social-item fa fa-instagram"></a>
-            <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-            <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-            <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-        </div>-->
+            <div class="topbar2">
+                <div class="topbar-social">
+                    <a href="#" class="topbar-social-item fa fa-facebook"></a>
+                    <a href="#" class="topbar-social-item fa fa-instagram"></a>
+                    <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+                    <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+                    <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                </div>
+
                 <!-- Logo2 -->
-                <a href="#/home" class="topbar-social">
-                    <img src="img/logo.png" alt="IMG-LOGO">
+                <a href="#/home" class="logo2">
+                    <img src="img/moto.jpeg" alt="Moto Bazaar">
                 </a>
 
                 <div class="topbar-child2">
-                    <div style="border-radius:100%" class="widget-header btn-group mr-3">
-
+                    <div style="border-radius:100%" class="widget-header mr-3">
                         <input ng-model="search" class="topsearch" autocomplete="off" type="text" ng-enter="Goblesearch(search)" name="name" value="" />
-                        <i style="margin-right: 40px; display:none" id="searchclear" class="fa fa-close"></i>
-                        <i id="searching_text" class="fa fa-search" style="position: absolute; right: 14px; top: 10px; font-size: 20px; cursor:pointer" ng-click="Goblesearch(search)"> </i>
                     </div>
 
-                    <!--<div class="btn-group">
-                <input id="searchinput" type="search" class="form-control">
 
-            </div>-->
 
                     <a href="#/ShoppingCart" class="widget-header mr-3">
 
@@ -889,13 +628,13 @@
 
 
                     </a>
-                    <!--<a class="widget-header mr-3" href="#/WishList" data-ng-hide="!authentication.isAuth">
+                    <a class="widget-header mr-3" href="#/WishList" data-ng-hide="!authentication.isAuth">
                         <div class="icontext">
                             <div class="icon-wrap icon-sm border round"><i class="fa fa-heart"></i></div>
                         </div>
                         <span class="badge badge-pill badge-danger notify">{{CurrentWishList.length}}</span>
 
-                    </a>-->
+                    </a>
 
 
                     <a href="#/login" data-offset="20,10" data-ng-hide="authentication.isAuth">
@@ -911,12 +650,12 @@
 
                     <ul class="nav navbar-nav" data-ng-hide="!authentication.isAuth">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color: #333; cursor: pointer; " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" style="color:#3F51B5" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                 <i class="fa fa-user"></i> &nbsp;{{authentication.userName}}
 
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index:10000">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#/Profile"> Profile</a>
                                 <a class="dropdown-item" href="#/orders"> My Orders</a>
                                 <a class="dropdown-item" href="#/WishList"> Wishlist</a>
@@ -983,16 +722,16 @@
 
 
         </div>
-        <div id="myHeader" class="wrap_header bg2">
+        <div id="myHeader" class="wrap_header">
 
-            <img style="display:none;" class="stickylogo" src="img/logo-colored.png" alt="Alternate Text" />
+            <img style="display:none;" class="stickylogo" src="img/moto.jpeg" alt="moto online" />
 
             <!-- Menu -->
             <div class="wrap_menu">
-                <nav class="menu" style="margin-left: -695px;">
-                    <ul class="main_menu" style="cursor: pointer;">
+                <nav class="menu">
+                    <ul class="main_menu">
                         <li>
-                            <a href="#/home"><i class="fa fa-home" style=" font-size: 18px;" aria-hidden="true"></i> Home</a>
+                            <a href="#/home">Home</a>
                             <!--<ul class="sub_menu">
                                 <li><a href="index.html">Homepage V1</a></li>
                                 <li><a href="home-02.html">Homepage V2</a></li>
@@ -1001,14 +740,14 @@
                         </li>
 
                         <li>
-                            <a href="#/Product"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Shop</a>
+                            <a href="#/Product">Shop</a>
                         </li>
 
 
                         <li>
-                            <a data-toggle="dropdown" style="font-size: 15px;" class="nav-link categories"><i class="fa fa-th"></i>  Categories <i class="fa fa-angle-down"></i></a>
+                            <a data-toggle="dropdown" class="nav-link categories"> Categories <i class="fa fa-angle-down"></i></a>
 
-                            <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu" style="z-index:10000">
+                            <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
                                 <li ng-if="cat.categories1.length==0" ng-repeat="cat in searchcategories">
                                     <a ng-click="GoToProductsWithCategoryID(cat.id,cat.categoryName)" class="dropdown-item">
                                         {{cat.categoryName}}
@@ -1042,12 +781,13 @@
 
 
 
+
                         <li>
-                            <a href="#/About"><i class="fa fa-info-circle" style=" font-size: 18px;" aria-hidden="true"></i> About</a>
+                            <a href="#/Contact">About Moto</a>
                         </li>
 
                         <li>
-                            <a href="#/Contact"><i class="fa fa-phone" style=" font-size: 18px;" aria-hidden="true"></i> Contact</a>
+                            <a href=""></a>
                         </li>
                     </ul>
                 </nav>
@@ -1079,11 +819,11 @@
         </div>
         <div class="wrap_header_mobile ">
             <!-- Logo moblie -->
-            <button style="color:#fff; font-size:14px;" onclick="window.location.href = '#/home'" class="logo-mobile">
-                <img style="" src="img/logo-colored.png" alt="IMG-LOGO">
-                <span class="logoName" style="Color:#fff!important;">SHIVSAAGAR</span>
+            <a style="color:#fff; font-size:14px;" href="index.html" class="logo-mobile">
+                <img style="" src="img/moto.jpeg" alt="Moto Bazar">
+                <span class="logoName"></span>
                 <!--<img src="img/logo.png" alt="IMG-LOGO">-->
-            </button>
+            </a>
 
             <!-- Button show menu -->
             <div style="margin-top:-6px;" class="btn-show-menu">
@@ -1108,13 +848,13 @@
 
                     </a>
 
-                    <!--<a class="widget-header mr-3" href="#/WishList" data-ng-hide="!authentication.isAuth">
+                    <a class="widget-header mr-3" href="#/WishList" data-ng-hide="!authentication.isAuth">
                         <div class="icontext">
                             <div class="icon-wrap icon-sm border round"><i class="fa fa-heart"></i></div>
                         </div>
                         <span class="badge badge-pill badge-danger notify">{{CurrentWishList.length}}</span>
 
-                    </a>-->
+                    </a>
 
 
                     <a class="widget-header mr-3" href="#/login" data-ng-show="!authentication.isAuth">
@@ -1131,9 +871,7 @@
                         <span style="cursor:pointer" id="openmenu" onclick="openNav2()" class="hamburger-inner">
                             <i style="font-size: 38px; margin-right: 18px; color: #fff;" class="fa fa-bars"></i>
                         </span>
-                        <span id="closemenu" onclick="closeNav2()" style="display: none; cursor: pointer; " class="hamburger-inner">
-                            <i style="font-size: 38px; margin-right: 18px; color: #fff;" class="fa fa-bars"></i>
-                        </span>
+
 
                     </span>
                 </div>
@@ -1144,191 +882,73 @@
         <div class="wrap_header_mobile searcharea">
             <div class="input-group mb-3">
 
-                <input x-webkit-speech ng-model="search" type="text" class="form-control" ng-enter="Goblesearch(search)" placeholder="Find Product" aria-label="Recipient's username" aria-describedby="basic-addon2">
-              
-                 <div class="input-group-append">    
-                     <i style="margin-right: 40px; display:none"  id="searchclearmobile" class="fa fa-close"></i>   
-                     <span id="searching_textmobile" ng-click="Goblesearch(search)" class="input-group-text" id="basic-addon2"> <i class="fa fa-search"></i> </span>
+                <input x-webkit-speech ng-model="search" type="text" class="form-control" placeholder="Find Product" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+
+                    <img style="position: absolute; width: 27px; right: 54px; top: 4px;" src="http://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Alternate Text" />
+
+                    <span ng-click="Goblesearch(search)" class="input-group-text" id="basic-addon2"> <i class="fa fa-search"></i> </span>
                 </div>
             </div>
 
         </div>
+        <div id="mySidenav2" class="sidenav2">
+            <span id="closemenu" onclick="closeNav2()" style="display: none; cursor: pointer;" class="hamburger-inner">
+                <i style="font-size: 26px; margin-left: 10px; color: #7e7a7a;" class="fa fa-close" title="Close"></i>
+            </span>
+            <ul class="social-menu list-inline">
+                <li class="list-inline-item"><a href="index.html#" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="index.html#" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="index.html#" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="index.html#" target="_blank" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                <li class="list-inline-item"><a href="index.html#" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i></a></li>
+            </ul>
+            <ul class="main-menu">
 
 
-
-
-
-
-
-
-        <div class="modal fade" id="myModalpop">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal Header -->
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <ul class="main-menu">
-
-
-                            <li class="">
-                                <a href="#/home">Home</a>
-
-                            </li>
-
-                            <!--<li class="">
-                                <a data-toggle="collapse" data-target="#collapse22">By Categories <i class="fa fa-angle-down"></i></a>
-
-                                <ul aria-labelledby="navbarDropdownMenuLink" class="filter-content collapse" id="collapse22">
-                                    <li ng-if="cat.categories1.length==0" ng-repeat="cat in searchcategories">
-                                        <a ng-click="GoToProductsWithCategoryID(cat.id,cat.categoryName)" class="filter-content collapse">
-                                            {{cat.categoryName}}
-                                        </a>
-                                    </li>
-
-                                    <li class="dropdown-submenu" ng-repeat="cat in searchcategories" ng-if="cat.categories1.length>0">
-                                        <a id="navbarDropdownMenuLink{{$index}}" aria-haspopup="true" aria-expanded="false" data-toggle="collapse" data-target="#item-{{cat.id}}-{{index}}">{{cat.categoryName}}</a>
-                                        <ul aria-labelledby="navbarDropdownMenuLink{{$index}}" class="filter-content collapse" id="item-{{cat.id}}-{{index}}">
-                                            <li ng-repeat="subcat in cat.categories1"><a ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)" class="dropdown-item">{{subcat.categoryName}}</a></li>
-
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>-->
-
-                            <li class="">
-                                <a href="#/Product">Shop</a>
-                            </li>
-
-
-                        
-                            <li data-ng-hide="!authentication.isAuth" class="">
-                                <a href="#/orders">My Orders</a>
-                            </li>
-
-                            <li data-ng-hide="!authentication.isAuth" class="">
-                                <a style="cursor:pointer" href="" data-ng-click="logOut()"> Sign Out</a>
-                            </li>
-                        </ul>
-
-                        <!--<button type="button" class="btn btn-primary " style="width: 49%; background-color:#2c387e " data-dismiss="modal">Cancel</button>-->
-
-                    </div>
-
-                    <!-- Modal footer -->
-
-                </div>
-            </div>
-        </div>
-
-
-
-        <div id="mySidenav2" class="sidenav2"style="background-color:#0d47a1">
-
-            <div class="row" style=" margin-right: 0px; margin-left: 0px; margin-bottom: 8px; color:white">
-                <div class="col-10" style="margin-top:-40px">
-                    <img src="img/logo-colored.png" style="margin-top:-8px;height:40px" alt="Alternate Text" /> SHIVSAAGAR
-                    <!--<div class="icon-wrap icon-sm border round"><i class="fa fa-user"></i></div><span data-ng-hide="authentication.isAuth"> hello.sign in</span><span data-ng-show="authentication.isAuth"> Hello {{authentication.userName}}</span>-->
-                </div>
-
-                <div class="col-2 pull-right" style="margin-top:-54px">
-                    <button id="mainmodel" style="color: white;" class="closebtn" onclick="closeNav2()">
-                        &times;
-
-                    </button>
-                </div>
-
-            </div>
-        
-
-
-            <ul class="main-menu bg">
-
-                <li data-ng-hide="!authentication.isAuth">
-                    <a href="#/Profile"><i class="fa fa-user" ></i> <span style="font-weight:bold">Welcome {{authentication.userName}}</span></a>
-
-                </li>
-
-
-                <li class="">
+                <li class="item-menu-mobile">
                     <a href="#/home">Home</a>
 
                 </li>
 
-                <li class="" style="color:black">
+                <li class="item-menu-mobile">
+                    <a data-toggle="dropdown"> Categories <i class="fa fa-angle-down"></i></a>
 
-                    <div style="" class="filter-content collapse show" id="collapse22">
-                        <div class="">
-                            <div class="" ng-repeat="parentCategory in searchcategories">
-
-                                <a class="" data-target="#item-{{$index}}" style="border: none;" data-toggle="collapse">
-                                    <i class="icon-action fa fa-chevron-right" ng-hide="parentCategory.categories1.length==0"></i>
-                                    <span class="form-check-label">
-                                        {{parentCategory.categoryName }}
-                                    </span>
-                                </a>
-                                <div class="collapse" id="item-{{$index}}">
-                                    <div class="form-group mb-1" ng-repeat="subcat in parentCategory.categories1" style=" padding-left: 19px">
-                                        <a class="" ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)" style="border: none;">
-                                            <i class="icon-action fa fa-chevron-right" ng-hide="subcat.categories1.length==0"></i>
-                                            <span class="form-check-label">
-                                                {{subcat.categoryName }}
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div> <!-- collapse .// -->
-                    <!--</article>-->
-                    <!--<a data-toggle="collapse" data-target="#collapse22">By Categories <i class="fa fa-angle-down"></i></a>
-
-                    <ul aria-labelledby="navbarDropdownMenuLink" class="filter-content collapse" id="collapse22">
+                    <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
                         <li ng-if="cat.categories1.length==0" ng-repeat="cat in searchcategories">
-                            <a ng-click="GoToProductsWithCategoryID(cat.id,cat.categoryName)" class="filter-content collapse">
+                            <a ng-click="GoToProductsWithCategoryID(cat.id,cat.categoryName)" class="dropdown-item">
                                 {{cat.categoryName}}
                             </a>
                         </li>
 
                         <li class="dropdown-submenu" ng-repeat="cat in searchcategories" ng-if="cat.categories1.length>0">
-                            <a id="navbarDropdownMenuLink{{$index}}" aria-haspopup="true" aria-expanded="false" data-toggle="collapse" data-target="#item-{{cat.id}}-{{index}}">{{cat.categoryName}}</a>
-                            <ul aria-labelledby="navbarDropdownMenuLink{{$index}}" class="filter-content collapse" id="item-{{cat.id}}-{{index}}">
-                                <li ng-repeat="subcat in cat.categories1"><a ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)" class="dropdown-item">{{subcat.categoryName}}</a></li>
+                            <a id="navbarDropdownMenuLink{{$index}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item">{{cat.categoryName}}</a>
+                            <ul aria-labelledby="navbarDropdownMenuLink{{$index}}" class="dropdown-menu">
+                                <li ng-repeat="subcat in cat.categories1">
+                                    <a ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)" class="dropdown-item">{{subcat.categoryName}}</a>
+                                </li>
 
                             </ul>
                         </li>
-                    </ul>-->
+                    </ul>
                 </li>
 
-                <li class="">
-                    <a href="#/Product">All Product</a>
+                <li class="item-menu-mobile">
+                    <a href="#/Product">Shop</a>
+                </li>
+                <li class="item-menu-mobile">
+                    <a href="#/Contact">About Moto</a>
                 </li>
 
-                <li data-ng-hide="!authentication.isAuth" class="">
-                    <a href="#/WishList">Wishlist</a>
-                </li>
-                <li data-ng-hide="!authentication.isAuth">
+                <li data-ng-hide="!authentication.isAuth" class="item-menu-mobile">
                     <a href="#/orders">My Orders</a>
                 </li>
 
-                <li data-ng-hide="!authentication.isAuth">
+                <li data-ng-hide="!authentication.isAuth" class="item-menu-mobile">
                     <a href="" data-ng-click="logOut()">Sign Out</a>
                 </li>
             </ul>
         </div>
-
-
-
-
-
-
         <!-- Menu Mobile -->
         <!--<div class="wrap-side-menu" >
             <nav class="side-menu">
@@ -1387,81 +1007,93 @@
     <section class="section-content" ng-if="!isRouteLoading" data-ng-view="" style="margin-top: -18px;"></section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     <!-- ========================= FOOTER ========================= -->
-
-
-
-
-
-
-    <footer ng-if="!isRouteLoading" class="bg6 p-t-45 p-b-43">
-        <div class="flex-w container">
-
+    <footer ng-if="!isRouteLoading" class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+        <div class="flex-w">
             <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
 
 
                 <div>
-                    <h5>Shivsagar Online</h5>
+                    <h2>Shivsagar Online</h2>
                     <p>You don't have to wait for the weekends to shop as you can shop online on your way back home after work.</p>
 
                     <div class="flex-m p-t-30">
-                        <a href="#" class="p-r-20 "><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="p-r-20 "><i class="fa fa-instagram"></i></a>
-
+                        <a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
                     </div>
                 </div>
             </div>
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4 hidden-m">
-                <h5 class="p-b-30">
+                <h4 class="s-text12 p-b-30">
                     Categories
-                </h5>
+                </h4>
 
                 <ul>
-                    <li class="p-b-9" ng-repeat="cat in searchcategories">
-                        <a href="" ng-click="GoToProductsWithCategoryID(cat.id,cat.categoryName)">
-                            {{cat.categoryName}}
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Men
                         </a>
                     </li>
 
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Women
+                        </a>
+                    </li>
+
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Dresses
+                        </a>
+                    </li>
+
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Sunglasses
+                        </a>
+                    </li>
                 </ul>
             </div>
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4 hidden-m">
-                <h5 class="p-b-30">
+                <h4 class="s-text12 p-b-30">
                     Links
-                </h5>
+                </h4>
 
                 <ul>
-                    <!--<li class="p-b-9">
+                    <li class="p-b-9">
                         <a href="#" class="s-text7">
                             Search
                         </a>
-                    </li>-->
+                    </li>
 
                     <li class="p-b-9">
-                        <a href="#/About" class="s-text7">
+                        <a href="#" class="s-text7">
                             About Us
                         </a>
                     </li>
 
                     <li class="p-b-9">
-                        <a href="#/Contact" class="s-text7">
+                        <a href="#" class="s-text7">
                             Contact Us
                         </a>
                     </li>
 
                     <li class="p-b-9">
-                        <a href="#/Category" class="s-text7">
-                            All Category
+                        <a href="#" class="s-text7">
+                            Returns
                         </a>
                     </li>
                 </ul>
             </div>
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4 hidden-m">
-                <h5 class="s-text12 p-b-30">
+                <h4 class="s-text12 p-b-30">
                     Help
-                </h5>
+                </h4>
 
                 <ul>
                     <li class="p-b-9">
@@ -1470,16 +1102,17 @@
                         </a>
                     </li>
 
-                    <!--<li class="p-b-9">
+                    <li class="p-b-9">
                         <a href="#" class="s-text7">
                             Returns
                         </a>
-                    </li>-->
-                    <!--<li class="p-b-9">
+                    </li>
+
+                    <li class="p-b-9">
                         <a href="#" class="s-text7">
                             Shipping
                         </a>
-                    </li>-->
+                    </li>
 
                     <li class="p-b-9">
                         <a href="#" class="s-text7">
@@ -1490,14 +1123,14 @@
             </div>
 
             <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3 hidden-m">
-                <h5 class="p-b-30">
+                <h4 class="s-text12 p-b-30">
                     QUICK SEARCH
-                </h5>
+                </h4>
 
                 <form>
                     <div class="w-size9">
 
-                        <i style="position: absolute; color: #c7c7c7; margin-top: 12px; margin-le t: 17=x;" class="fa >a-search"></i>
+                        <i style="position: absolute; color: #c7c7c7; margin-top: 12px; margin-left: 17px;" class="fa fa-search"></i>
 
                         <input style="border-radius: 20px; padding: 8px; padding-left:40px;" ng-model="search" placeholder="Find Your Need !!" class="form-control" autocomplete="off" type="text" name="name" value="">
 
@@ -1506,7 +1139,7 @@
 
                     <div class="w-size2 p-t-20">
                         <!-- Button -->
-                        <button ng-click="Goblesearch(search)" style="background: #0d47a1; color: #fff" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                        <button ng-click="Goblesearch(search)" style="background: #2c387e; color:#fff" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
                             Find Me !!
                         </button>
                     </div>
@@ -1517,42 +1150,170 @@
 
 
     </footer>
-    
+    <div class="t-center" ng-if="!isRouteLoading" style="display:none">
+
+
+        <div style="background:#ccc" class="t-center s-text8 p-t-20 p-b-20">
+            Copyright © 2019 <a href="#"> Shivam ITCS </a> ALL Right Reserved
+        </div>
+    </div>
+    <footer class="main-footer" style="display:none;">
+        <!-- Service Block-->
+        <div class="services-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start">
+                        <div class="item d-flex align-items-center">
+                            <div class="icon"><i class="fa fa-truck"></i></div>
+                            <div class="text">
+                                <h6 class="no-margin text-uppercase">Free shipping &amp; return</h6><span>Free Shipping over $300</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="item d-flex align-items-center">
+                            <div class="icon"><i class="fa fa-money"></i></div>
+                            <div class="text">
+                                <h6 class="no-margin text-uppercase">Money back guarantee</h6><span>30 Days Money Back Guarantee</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <div class="item d-flex align-items-center">
+                            <div class="icon"><i class="fa fa-headphones"></i></div>
+                            <div class="text">
+                                <h6 class="no-margin text-uppercase"> +91.295.323.2033</h6><span>24/7 Available Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Block -->
+        <div class="main-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class=" col-lg-4">
+                        <h2>Shivsagar Online</h2>
+                        <p>You don't have to wait for the weekends to shop as you can shop online on your way back home after work.</p>
+                        <ul class="social-menu list-inline">
+                            <li class="list-inline-item"><a href="index.html#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="index.html#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="index.html#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="index.html#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                            <li class="list-inline-item"><a href="index.html#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="site-links col-lg-2 col-md-6">
+                        <h5 class="text-uppercase">Company</h5>
+                        <ul class="list-unstyled">
+                            <li> <a href="#/login">Login</a></li>
+                            <li> <a href="#/signup">Register</a></li>
+                        </ul>
+                    </div>
+                    <div class="newsletter col-lg-4">
+                        <h5 class="text-uppercase">Daily Offers & Discounts</h5>
+                        <p>Shivsagar Online provide latest products offers and discounts on product to you.</p>
+                        <form action="index.html#" id="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" name="subscribermail" placeholder="Your Email Address">
+                                <button type="submit"> <i class="fa fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights" style="display:none;">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="text col-md-6">
+                        <p>&COPY;<a href="www.shivamitconsultancy.com" target="_blank">Shivamitconsultancy</a> All rights reserved.</p>
+                    </div>
+                    <div class="payment col-md-6 clearfix">
+                        <ul class="payment-list list-inline-item pull-right">
+                            <li class="list-inline-item">
+                                <!--<img style="width:400px;height:70px" src="img/paypal.png" alt="...">-->
+                            </li>
+                            <!--<li class="list-inline-item"><img src="img/mastercard.svg" alt="..."></li>
+                            <li class="list-inline-item"><img src="img/paypal.svg" alt="..."></li>
+                            <li class="list-inline-item"><img src="img/western-union.svg" alt="..."></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="section-footer bg-secondary" style="display:none;">
+        <div class="container">
+            <section class="footer-top padding-top">
+                <div class="row">
+                    <aside class="col-lg-3 col-sm-4 white">
+                        <h5 class="title">Customer Services</h5>
+                        <ul class="list-unstyled">
+                            <li> <a href="#">Help center</a></li>
+                            <li> <a href="#">Money refund</a></li>
+                            <li> <a href="#">Terms and Policy</a></li>
+                            <li> <a href="#">Open dispute</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-lg-3 col-sm-4 white">
+                        <h5 class="title">My Account</h5>
+                        <ul class="list-unstyled">
+                            <li> <a href="#"> User Login </a></li>
+                            <li> <a href="#"> User register </a></li>
+                            <li> <a href="#"> Account Setting </a></li>
+                            <li> <a href="#"> My Orders </a></li>
+                            <li> <a href="#"> My Wishlist </a></li>
+                        </ul>
+                    </aside>
+                    <!--<aside class="col-lg-3 col-sm-4  white">
+                        <h5 class="title">About</h5>
+                        <ul class="list-unstyled">
+                            <li> <a href="#"> Our history </a></li>
+                            <li> <a href="#"> How to buy </a></li>
+                            <li> <a href="#"> Delivery and payment </a></li>
+                            <li> <a href="#"> Advertice </a></li>
+                            <li> <a href="#"> Partnership </a></li>
+                        </ul>
+                    </aside>-->
+                    <aside class="col-lg-3 col-sm-4 ">
+                        <article class="white">
+                            <h5 class="title">Contacts</h5>
+                            <p>
+                                <strong>Phone: </strong> +123456789 <br>
+                                <strong>Fax:</strong> +123456789
+                            </p>
+                            <div class="btn-group white">
+                                <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i class="fa fa-facebook-f  fa-fw"></i></a>
+                                <a class="btn btn-instagram" title="Instagram" target="_blank" href="#"><i class="fa fa-instagram  fa-fw"></i></a>
+                                <a class="btn btn-youtube" title="Youtube" target="_blank" href="#"><i class="fa fa-youtube  fa-fw"></i></a>
+                                <a class="btn btn-twitter" title="Twitter" target="_blank" href="#"><i class="fa fa-twitter  fa-fw"></i></a>
+                            </div>
+                        </article>
+                    </aside>
+                </div> <!-- row.// -->
+                <br>
+            </section>
+            <section class="footer-bottom row border-top-white" style="display:none">
+                <div class="col-sm-6">
+                    <p class="text-white-50"> Made  <br>  by SHIVAM ITCS</p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="text-md-right text-white-50">
+                        Copyright &copy  <br>
+                        <a href="http://shivamitconsultancy.com" class="text-white-50">SHIVAM ITCS</a>
+                    </p>
+                </div>
+            </section> <!-- //footer-top -->
+        </div><!-- //container -->
+    </footer>
     <!-- ========================= FOOTER END // ========================= -->
-
-   
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-
     <!--Custom Js-->
-    <script>
-        var _gaq = [['_setAccount', 'UA-2508361-9'], ['_trackPageview']];
-        (function (d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        }(document, 'script'));
-    </script>
-
-    <!--<script src="js/easyzoom.js"></script>-->
     <script src="js/Myscript.js"></script>
-    <!--<script>
-        $(doucment).ready(function () {
-            var searchtexted = $(".topsearch").val();
-
-            if (searchtexted != '') {
-                debugger;
-                $("#searchclear").css("display", "block");
-            }
-        })
-    </script>-->
     <script>
-
-
-        $(".section-content").click(function () {
-            debugger;
-            $("#mainmodel").trigger("click");
-        })
-
         function openNav() {
             document.getElementById("mySidenav").style.width = "340px";
         }
@@ -1562,7 +1323,7 @@
         }
         function openNav2() {
             debugger;
-            //$("#myModalpop").modal("show");
+
             $("#openmenu").css("display", 'none');
 
             $("#closemenu").css("display", 'block');
@@ -1570,70 +1331,20 @@
         }
 
         function closeNav2() {
-
-            //$("#myModalpop").modal("hide");
             $("#openmenu").css("display", 'block');
 
             $("#closemenu").css("display", 'none');
             document.getElementById("mySidenav2").style.width = "0";
         }
-
-
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script>
-        function fn_common() {
-            funthis = this;
-            this.loader = {
-                start: function (setting) {
-                    setting.ob.find('.ezmasker').remove();
-                    var div = $('<div></div>')
-                    .css({
-                        'height': setting.height,
-                        'width': setting.width,
-                        'position': (!!setting.position) ? setting.position : 'absolute',
-                        'background-color': '#FFFFFF',
-                        'filter': 'alpha(opacity=20)',
-                        'opacity': (!!setting.opacity) ? setting.opacity : '0.6',
-                        'text-align': 'center',
-                        'z-index': '20000000'
-                    })
-                    .append('<span style=" position: absolute; text-align: center; color: white;background: ' + (!!setting.textbackcolor ?
-                    setting.textbackcolor : 'transparent') + ' ;' +
-                    ' padding-left: 7px; border-right-width: 12px; padding-right: 9px; border-bottom-width: 0px; padding-bottom: 3px;transform: translate(-50%,-50%); ;color: white;'
-                    + ' top: 50%;left:50%;border-radius:' + (!!setting.textbrad ? setting.textbrad : '0px') + ';">' + ((setting.requireloader == undefined) ?
-                     ('<img style="margin-right: 3px;top:44%; width:70px" src="img/loading_io.gif">')
-                      : ((setting.requireloader == undefined) ? '<img style="margin-right: 3px;top:44%; width:70px" src="img/loading_io.gif">'
-                      : '')) + '<br /><span style="color:black">' + setting.text + '</span></span>')
-                    .addClass('ezmasker')
-                     .prependTo(setting.ob);
-                    if (!!setting.ctop) {
-                        div.css({
-                            top: setting.ctop
-                        });
-                    }
-                    return funthis;
-                },
-                hide: function (setting) {
-                    setting.ob.find('.ezmasker').fadeOut('slow', function () {
-                        $(this).remove();
-                    });
-                    return funthis;
-                }
-            }
-        }
-
-    </script>
-
     <!-- Angularjs libraries -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-sanitize.min.js"></script>
-    <script src="UIKit/plugins/fancybox/fancybox.min.js" type="text/javascript"></script>
-    <link href="UIKit/plugins/fancybox/fancybox.min.css" type="text/css" rel="stylesheet">
+
     <script src="scripts/angular-local-storage.min.js"></script>
     <script src="scripts/loading-bar.min.js"></script>
     <script src="scripts/jquery.animate_from_to-1.0.js"></script>
@@ -1665,7 +1376,5 @@
     <script src="app/controllers/categoryController.js"></script>
     <script src="app/controllers/profileController.js"></script>
     <script src="app/controllers/OrderDetails.js"></script>
-    <script src="app/controllers/AboutusController.js"></script>
 </body>
-
 </html>

@@ -48,10 +48,7 @@
         padding: 7px;
         font-size: 13px;
     }
-    .card-group-item .card-header {
-        border-bottom: 0;
-        background-color: #0d47a1;
-    }
+    
 
 
 
@@ -218,28 +215,120 @@
             margin: 0 0 1px;
         }
 
-        .viewdetail {
-            /*width: 175px;*/
-            display: block;
-            margin: 0 auto;
-            /* margin: 12px; */
-            text-align: center;
-            /*padding: 0px;*/
-            margin-top: 8px;
-            border: 1px solid #069;
-            margin-bottom: 10px;
-            font-size: 14px;
-            cursor:pointer;
+    .viewdetail {
+        /*width: 175px;*/
+        display: block;
+        margin: 0 auto;
+        /* margin: 12px; */
+        text-align: center;
+        /*padding: 0px;*/
+        margin-top: 8px;
+        border: 1px solid #069;
+        margin-bottom: 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+        .btn-danger{
+            background-color:red;
+            border-color:yellow;
+            color:white;
         }
+    .fade.show {
+        opacity: 1;
+    }
+  .product-item {
+        position: relative;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        display: inline-block;
+        background-color: #ffffff;
+        transition: all 0.3s ease-in-out;
+    }
+      .post-labels {
+            top: 0px;
+            left: 0px;
+            position: absolute;
+        }
+    .post-labels {
+        z-index: 1;
+    }
+
+            .post-labels ul li {
+                display: table;
+                font-size: 14px;
+                font-weight: 500;
+                list-style: none;
+                padding: 3px 8px;
+                position: relative;
+                border-radius: 3px;
+                text-align: center;
+                margin-bottom: 12px;
+                color: #ffffff;
+                text-transform: uppercase;
+                border-bottom-right-radius: 0px;
+            }
+    .image-container {
+        margin: 0px;
+        float: left;
+        width: 180px;
+        height: 180px;
+        margin-right: 10px;
+        border-radius: 3px;
+    }
+  .product-detail {
+        display: table;
+    }
+    .product-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    a, button {
+        cursor: pointer;
+        color: #222222;
+    }
+
+    .item-price strong {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .color-black {
+        color: #222222;
+    }
+
+    strong, span, small, i {
+        line-height: 1;
+        display: inline-block;
+    }
+    .product-grid4 .product-discount-label, .product-grid4 .product-new-label {
+        color: #fff;
+        background-color: #d7292a;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 50px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        transition: all .3s;
+    }
 </style>
 
 
-<section class="section-content my-padding  bg" style="z-index:100">
+<section class="bgwhite p-t-55 p-b-65">
     <div class="container">
 
         <div class=" row">
-            <div class="col-md-3 col-12">
-                <div id="mySidenav" class="sidenav">
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+                <div   class="leftbar p-r-20 p-r-0-sm">
+
                     <!--<div class="mobile-margin visible-xs"></div>-->
                     <!--<img class="logoimage" src="img/logo-colored.png" alt="Alternate Text">-->
 
@@ -356,11 +445,12 @@
             </div>
             <div class="col-md-9 col-12">
 
-                <div style="margin-bottom:12px;" class="card topbread">
+                <div style="margin-bottom:12px;" class="topbread">
                     <div style="padding:11px;" class="card-header">
 
                         <div class="row">
                             <div class="col-6">
+
 
                                 <a style="display:none;color:#fff" class="filter-btn" onclick="filter()"> <i class="fa fa-filter"></i> Filter</a>
 
@@ -376,11 +466,11 @@
                                 <a class="roundbtn WhiteColor" ng-click="LoadInMode('G')" data-toggle="tooltip" title="" data-original-title="Grid view"> <i ng-class="currentMode==true ? 'fa fa-th iconstyle isNotActive' : 'fa fa-th iconstyle'"></i></a>
                                 <a class="roundbtn WhiteColor" ng-click="LoadInMode('L')" data-toggle="tooltip" title="" data-original-title="List view"> <i ng-class="currentMode==false ? 'fa fa-bars iconstyle isNotActive' : 'fa fa-bars iconstyle'" class="fa fa-bars iconstyle"></i></a>
                                 <!--<a onclick="openNav()" data-toggle="tooltip" id="filterBtn" title="Filter"> <i class="fa fa-filter iconstyle"></i></a>-->
-                                <a class="roundbtn WhiteColor" ng-click="Clearfilter()" data-toggle="tooltip" title="" data-original-title="Clear Filter"> <i class=" fa fa-close iconstyle"></i></a>
+                                <a class="roundbtn WhiteColor" ng-click="Clearfilter()" data-toggle="tooltip" title="" data-original-title="Clear Filter">
+                                <i class=" fa fa-close iconstyle"></i>
+                                </a>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -442,17 +532,24 @@
                                                     <img class="img-fluid pic-2" src="{{GetProductImage(GetPath(x[13],1))}}">
                                                 </a>
 
-                                                <span class="product-new-label" ng-if="x[16] > 0">{{x[16]}}% <span style=" position: absolute; top: 10px; left: 10px; font-size: 9px; color: white;">off</span></span>
+                                                <span class="product-new-label" ng-if="x[16] > 0">{{x[16]}}% 
+                                                <span style=" position: absolute; top: 10px; left: 10px; font-size: 9px; color: white;">off</span>
+                                                </span>
 
                                             </div>
                                             <div class="product-content">
-                                                <h3 class="title"><a href="#" class="fontstyle"><span ng-bind="x[9] | limitTo:17"></span><span ng-show="x[9].length>20">...</span></a></h3>
+                                                <h3 class="title">
+                                                <a href="#" class="fontstyle">
+                                                    <span ng-bind="x[9] | limitTo:17"></span>
+                                                    <span ng-show="x[9].length>20">...</span>
+                                                    </a>
+                                                </h3>
                                                 <div class="price">
-                                                    {{x[5]-x[5]*x[16]/100|currency:"₹ "}}
+                                                    {{x[5]-x[5]*x[16]/100|currency:"MRP. "}}
                                                     <del class="price-old" ng-if="x[16]>0">{{x[5]|currency:"₹ "}}</del>
                                                 </div>
 
-                                                <button class="viewdetail btn btn-primary" ng-click="SetProduct(x)">View more</button>
+                                                <button class="viewdetail btn btn-danger" ng-click="SetProduct(x)">View more</button>
                                                 <!--<a class="add-to-cart" href="">ADD TO CART</a>-->
                                                 <!--<a ng-click="AddToCartGlobal(x[4],x,'products-')" id="btn_{{x[4]}}" class="cartButton"><i id="spinid_{{x[4]}}" class="fa fa-shopping-cart"></i></a>-->
                                             </div>
@@ -461,6 +558,8 @@
                                 </div>
                                 <div class="row" ng-show="currentMode==false" style="display:none;">
                                     <div class="col-md-4" ng-repeat="x in pagedItems">
+
+
                                         <figure class="card card-product">
                                             <div class="img-wrap">
                                                 <img src="{{GetProductImage(x[13])}}" ng-mouseover="hover(this, '{{GetProductImage(x[12])}}');" ng-mouseout="hover(this, '{{GetProductImage(x[13])}}');">
@@ -488,66 +587,98 @@
                                     <!-- col // -->
                                 </div> <!-- row.// -->
                                 <!--List view start-->
-                                <article class="card card-product row" ng-repeat="x in pagedItems" style="margin-bottom:10px;" ng-show="currentMode==true">
-
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <aside class="col-sm-3">
-                                                <div ng-click="SetProduct(x)" class="img-wrap"><img src="{{GetProductImage(GetPath(x[13],0))}}" alt="product" class="img-fluid"></div>
-                                            </aside> <!-- col.// -->
-                                            <article class="col-sm-6">
-
-                                                <h5 ng-click="SetProduct(x)" class="title"> {{x[9]}} </h5>
-                                                <!--<div class="rating-wrap  mb-2">
-                                                    <ul class="rating-stars">
-                                                        <li style="width:80%" class="stars-active">
-                                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="label-rating">132 reviews</div>
-                                                    <div class="label-rating">154 orders </div>
-                                                </div>-->
-                                                <p><span ng-bind="x[10] | limitTo:100"></span><span ng-show="x[10].length>150">...</span>  </p>
-                                                <!--<dl class="dlist-align" ng-repeat="y in AllProductsColumns|limitTo:3">
-                                                    <dt>{{y.ColName}}</dt>
-                                                    <dd><span> {{x[y.colIndex]}} </span> </dd>
-                                                </dl>-->
-
-                                            </article> <!-- col.// -->
-                                            <aside class="col-sm-3 border-left">
-                                                <div class="action-wrap">
-                                                    <div class="price-wrap h4">
-                                                        <span class="price"> {{x[5]|currency:"₹ "}}</span>
-                                                        <!--  <del class="price-old"> $98</del>-->
-                                                    </div> <!-- info-price-detail // -->
-                                                    <!--<p class="text-success">Free shipping</p>
-                                                    <br>-->
-                                                    <!--<p>
-                                                        <a ng-click="AddToCartGlobal(x[4],x,'products-')" class="btn btn-primary b25"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
-                                                        <a ng-click="SetProduct(x)" class="btn btn-secondary"> <i class="fa fa-info"></i> Details  </a>
-                                                    </p>
-                                                    <a href="#"><i class="fa fa-heart"></i> Add to wishlist</a>-->
-                                                </div> <!-- action-wrap.// -->
-                                            </aside> <!-- col.// -->
 
 
-                                        </div> <!-- row.// -->
-                                    </div> <!-- card-body .// -->
-                                </article>
+
+
+                                <div class="row" style="display:none;">
+                                    <aside class="col-sm-3">
+                                        <div ng-click="SetProduct(x)" class="img-wrap"><img src="{{GetProductImage(GetPath(x[13],0))}}" alt="product" class="img-fluid"></div>
+                                    </aside> <!-- col.// -->
+                                    <article class="col-sm-6">
+
+                                        <h5 ng-click="SetProduct(x)" class="title"> {{x[9]}} </h5>
+                                        <!--<div class="rating-wrap  mb-2">
+                <ul class="rating-stars">
+                    <li style="width:80%" class="stars-active">
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </li>
+                    <li>
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </li>
+                </ul>
+                <div class="label-rating">132 reviews</div>
+                <div class="label-rating">154 orders </div>
+            </div>-->
+                                        <p><span ng-bind="x[10] | limitTo:100"></span><span ng-show="x[10].length>150">...</span>  </p>
+                                        <!--<dl class="dlist-align" ng-repeat="y in AllProductsColumns|limitTo:3">
+                <dt>{{y.ColName}}</dt>
+                <dd><span> {{x[y.colIndex]}} </span> </dd>
+            </dl>-->
+
+                                    </article> <!-- col.// -->
+                                    <aside class="col-sm-3 border-left">
+                                        <div class="action-wrap">
+                                            <div class="price-wrap h4">
+                                                <span class="price"> {{x[5]|currency:"₹ "}}</span>
+                                                <!--  <del class="price-old"> $98</del>-->
+                                            </div> <!-- info-price-detail // -->
+                                            <!--<p class="text-success">Free shipping</p>
+                <br>-->
+                                            <!--<p>
+                    <a ng-click="AddToCartGlobal(x[4],x,'products-')" class="btn btn-primary b25"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+                    <a ng-click="SetProduct(x)" class="btn btn-secondary"> <i class="fa fa-info"></i> Details  </a>
+                </p>
+                <a href="#"><i class="fa fa-heart"></i> Add to wishlist</a>-->
+                                        </div> <!-- action-wrap.// -->
+                                    </aside> <!-- col.// -->
+
+
+                                </div> <!-- row.// -->
+
+                                <div class="tab-content">
+                                    <div id="all" class="tab-pane fade in active show">
+                                        <div class="row"ng-show="currentMode==true">
+                                            <div class="col-lg-6 col-md-6 col-sm-6" ng-repeat="x in pagedItems">
+                                                <div class="product-item">
+                                                    <div class="post-labels">
+                                                        <ul class="clearfix">
+                                                            <li class="bg-primary product-new-label ng-scope ng-binding" ng-if="x[16] > 0">
+                                                                {{x[16]}}%                                  
+                                                           <span style=" position: initial; top: 10px; left: 10px; font-size: 9px; color: white;">Margin</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="image-container">
+                                                        <img src="{{GetProductImage(GetPath(x[13],0))}}" class="border img-md">
+                                                    </div>
+                                                    <div class="product-detail">
+                                                        <a href="#!" class="product-title">
+                                                            <span ng-bind="x[9] | limitTo:17"></span>
+                                                            <span ng-show="x[9].length>20">...</span>
+                                                        </a>
+                                                        <div class="item-price"style="font-weight:bold;font-size:larger;">
+                                                            {{x[5]-x[5]*x[16]/100|currency:"MRP. "}}
+                                                            <del class="price-old" ng-if="x[16]>0">{{x[5]|currency:"₹ "}}</del>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <button class="viewdetail btn btn-danger" ng-click="SetProduct(x)">View More</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div ng-show="loadmore==true">
                                     <div class="container">
-
                                         <div style="text-align:center;">
                                             <img src="img/ajax_loading.gif" width="100" />
                                         </div>
-
                                     </div>
                                 </div>
                                 <div style="text-align:center;">
@@ -557,6 +688,7 @@
                                 </div>
                             </main> <!-- col.// -->
                         </div>
+
                         <!--<div class="checkoutbtn">
                             <a ng-click="IsAutheticate()" onclick="openNav()" class="btn btn-primary btn-sm"><i class="fa fa-search-plus"></i>Sort</a>
                         </div>-->
