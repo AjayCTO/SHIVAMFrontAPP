@@ -1,0 +1,639 @@
+﻿<style>
+    .logo {
+        float: right;
+        margin-left: 16rem;
+        padding: 10px;
+    }
+
+    .img-png {
+        float: right;
+        width: 480px;
+        height: auto;
+        background: transparent;
+    }
+
+    .bkvb {
+        background-color: #ffe4e461;
+        padding: 100px;
+        position: inherit;
+        top: 50%;
+        left: 0%;
+        font-size: 34px;
+        color: #cc0707e3;
+        transform: translate(-50%-50%);
+        font-family: 'Lucida Sans', Verdana, sans-serif;
+    }
+
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .KYC {
+        margin-top: 20px;
+        background-position: center;
+        background-color: rgba(235, 235, 235, 0.747);
+        height: auto;
+        text-align: center;
+        font-family: system-ui;
+    }
+
+    h3 {
+        font-family: sans-serif;
+        font-weight: 400;
+        margin: 10px 0;
+        font-size: 30px;
+        color: #9f3535;
+    }
+
+    .button3 {
+        background-color: #c91919;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 22px;
+        margin: 11px 2px;
+        cursor: pointer;
+        padding: 14px;
+        width: 18rem;
+        border-radius: 30px;
+    }
+
+    .button-last {
+        background-color: #c91919;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 28px;
+        margin: 11px 2px;
+        cursor: pointer;
+        padding: 5px;
+        width: 15rem;
+        border-radius: 30px;
+        margin-left: 50rem;
+    }
+
+    .btn-medium1 {
+        width: 150px;
+        background-color: yellow;
+        border-radius: 20px;
+        margin-left: 0px;
+        line-height: 2.5;
+    }
+
+
+
+    h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #111;
+    }
+
+    .custom-control {
+        margin-bottom: 15px;
+    }
+
+    .checkoutbtn2 .btn {
+        width: 50%;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        border: 1px solid gray;
+        position: fixed;
+        bottom: 0;
+        margin-top: 5px;
+        z-index: 1000;
+        background-color: #2c387e;
+        color: #fff !important;
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .checkoutbtn3 .btn {
+        width: 50%;
+        right: 0;
+        margin-top: 5px;
+        float: right;
+        border-radius: 0;
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        background-color: #2c387e;
+        border: 1px solid gray;
+        color: #fff !important;
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .sidenav a; {
+        text-decoration: none;
+        font-size: 14px;
+        color: #818181;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .logoimage {
+        height: 28px;
+        position: absolute;
+        top: 17px;
+        left: 9px;
+    }
+
+    @media screen and (max-height: 450px) {
+
+        .sidenav a {
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (min-width: 450px) {
+        .checkoutbtn2 {
+            display: none;
+        }
+
+        .checkoutbtn3 {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        #filterBtn {
+            display: none;
+        }
+    }
+
+    @media all and (max-width: 800px) {
+        .sidenav {
+            display: none;
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            z-index: 10000;
+        }
+
+        .topbread {
+            margin-top: 20px;
+        }
+
+        .filterarea {
+            overflow-y: auto;
+        }
+
+        .card-filter {
+            margin-top: 15px;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        .filter-container {
+            padding: 0 !important;
+        }
+
+
+        .filter-btn {
+            display: block !important;
+            width: 80px;
+            border: 1px solid #fff;
+            text-align: center;
+            /*border-radius: 16px;*/
+            color: #fff !important;
+            font-size: 14px;
+        }
+
+        .closefilter {
+            display: block !important;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+            color: #888 !important;
+        }
+
+        /*header.card-header
+        {
+            background-color:#f1f1f1 !important;
+        }*/
+
+    }
+
+
+
+
+    .filter-summary-filter {
+        float: left;
+        margin-right: 8px;
+    }
+
+    .filter-summary-removeFilter {
+        border: solid 1px #d4d5d9;
+        border-radius: 20px;
+        padding: 6px;
+    }
+
+    .purple {
+        color: #0af !important;
+    }
+
+    .breadcrumb-item a {
+        font-size: 14px;
+    }
+
+    .iconstyle {
+        border: 1px solid #bbbfc5;
+    }
+
+    .product-grid4 .product-image4 img {
+        padding: 20px;
+    }
+
+    .product-grid4 {
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        margin-bottom: 15px;
+    }
+
+    .fontstyle {
+        font-size: 15px;
+    }
+
+    .icon-action {
+        color: #fff !important;
+    }
+
+    .product-grid4 .price {
+        font-size: 13px;
+    }
+
+    .product-grid4 .title {
+        margin: 0 0 1px;
+    }
+
+    .viewdetail {
+        /*width: 175px;*/
+        display: block;
+        margin: 0 auto;
+        /* margin: 12px; */
+        text-align: center;
+        /*padding: 0px;*/
+        margin-top: 8px;
+        border: 1px solid #069;
+        margin-bottom: 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn-danger {
+        background-color: red;
+        border-color: yellow;
+        color: white;
+    }
+
+    .fade.show {
+        opacity: 1;
+    }
+
+    .product-item {
+        position: relative;
+        border-radius: 3px;
+        margin-bottom: 30px;
+        display: inline-block;
+        background-color: #ffffff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .post-labels {
+        top: 0px;
+        left: 0px;
+        position: absolute;
+    }
+
+    .post-labels {
+        z-index: 1;
+    }
+
+        .post-labels ul li {
+            display: table;
+            font-size: 14px;
+            font-weight: 500;
+            list-style: none;
+            padding: 3px 8px;
+            position: relative;
+            border-radius: 3px;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #ffffff;
+            text-transform: uppercase;
+            border-bottom-right-radius: 0px;
+        }
+
+    .image-container {
+        margin: 0px;
+        float: left;
+        width: 180px;
+        height: 180px;
+        margin-right: 10px;
+        border-radius: 3px;
+    }
+
+    .product-detail {
+        display: table;
+    }
+
+    .product-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    a, button {
+        cursor: pointer;
+        color: #222222;
+    }
+
+    .item-price strong {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .color-black {
+        color: #222222;
+    }
+
+    strong, span, small, i {
+        line-height: 1;
+        display: inline-block;
+    }
+
+    .product-grid4 .product-discount-label, .product-grid4 .product-new-label {
+        color: #fff;
+        background-color: #d7292a;
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 50px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        transition: all .3s;
+    }
+
+    .row1 {
+        background-color: #ffffff;
+        width: 30%;
+        height: 137px;
+        margin-bottom: 0px;
+        display: inline-grid;
+        font-size: 20px;
+        text-align: center;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+</style>
+
+<div class="bkvb">
+    
+    <img src="/img/Smile.png" width="160px" height="auto">
+    <h1 style="font-size: 60px;font-family: serif;font-weight: bold;">WELCOMES<br>ALL SHOP OWNERS!</h1><br>
+    <div class="row1">
+        <i class="fa fa-shopping-cart" style='font-size:36px;color: black;padding-top: 35px;'></i>
+        <h4>15 Lakh + <b style="color: rgb(7, 6, 6);">Retailers</b></h4>
+    </div>
+    <div class="row1">
+        <i class="fa fa-credit-card" style="font-size:36px;color: black;padding-top: 34px;"></i>
+        <h4><b style="color: rgb(7, 6, 6);">Credit Upto</b> <b>5 Lakhs</b></h4>
+    </div>
+    <div class="row1">
+        <i class="fa fa-male" style="font-size:36px;color: black;padding-top: 34px;"></i>
+        <h4>
+            <b style="color: rgb(7, 6, 6);">Product From </b> 30K <b style="color: black;"> Sellers </b>
+        </h4>
+    </div>
+</div>
+<div class="KYC">
+    <p style="color:black;font-size: 28px;"> To See Wholesale Prices & Buy Products</p>
+    <h1 style="color: #a01515;font-size: 60px;"><b>COMPLEATE SHOP'S KYC</b></h1>
+    <h2 style="font-size: 38px;color: #777575;">
+        KYC is needed so that only shop owners like you can see<br>
+        wholesale Prices and not your shop's customers
+    </h2>
+    <hr>
+    <p style="font-size: 23px;">Upload <b>ANY ONE</b> of the following documents</p>
+    <hr>
+    <h3>Aadhar Card | GST | Cancelled currunt acount chaque | Shop Licence </h3>
+
+    <button class="button button3">Upload KYC</button>
+    <p style="color: rgb(29, 28, 28);font-size: 22px;padding: 10px;">
+        Govrnment mendates all businesses to get their
+        shop KYC done
+    </p>
+</div>
+<br>
+<br>
+<section class="section-content padding-y-sm bg" ng-repeat="cat in searchcategories">
+    <div class="container">
+
+        <header class="section-heading heading-line" ng-if="cat.categories1.length>0">
+            <h4 class="title-section bg">  {{cat.categoryName}}</h4>
+        </header>
+        <div ng-show="Isloadingcat==true">
+
+
+            <div style="text-align:center;">
+                <img src="../img/ajax_loading.gif" width="100" />
+            </div>
+
+
+        </div>
+        <div class="sliderarrow" ng-if="cat.categories1.length>0">
+            <i class="fa fa-chevron-left"></i>
+            <i style="float:right" class="fa fa-chevron-right"></i>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="owl-carousel owl-init category-slider">
+                <div class="item-slide" ng-repeat="subcat in cat.categories1">
+
+                    <figure class="card card-product" ng-click="GoToProductsWithCategoryID(subcat.id,subcat.categoryName)">
+
+                        <div class="img-wrap" style="cursor:pointer">
+                            <img class="card-img-top" src="{{GetcatBgImage(subcat.categoryImage)}}" alt="">
+
+                        </div>
+                        <figcaption class="info-wrap text-center">
+                            <h6 style="cursor:pointer" class="title text-truncate">{{subcat.categoryName}}</h6>
+
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+        </div> <!-- row.// -->
+
+
+
+    </div> <!-- container .//  -->
+</section>
+
+<section class="section-content padding-y-sm bg">
+    <div class="container">
+
+        <header class="section-heading heading-line">
+            <h4 class="title-section bg">Our Featured Picks</h4>
+        </header>
+        <div ng-show="loadfeatured==false">
+            <div style="text-align:center;">
+                <img src="../img/ajax_loading.gif" width="100" />
+            </div>
+        </div>
+        <div class="sliderarrow">
+            <i class="fa fa-chevron-left"></i>
+            <i style="float:right" class="fa fa-chevron-right"></i>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="owl-carousel owl-init products-slider">
+                <div class="item-slide" ng-repeat="x in pagedItems">
+                    <figure class="card card-product">
+                        <span class="badge-new"> {{x[5]|currency:"₹ "}} </span>
+                        <div class="img-wrap" style="cursor:pointer" ng-click="SetProduct(x)">
+                            <img class="card-img-top" src="{{GetProductImage(x[13])}}" alt="{{x[9]}}">
+
+                        </div>
+                        <figcaption class="info-wrap text-center">
+                            <h6 style="cursor:pointer" ng-click="SetProduct(x)" class="title text-truncate">{{x[9]}}</h6>
+                            <div class="action-wrap">
+                                <!--<a ng-click="AddToCartGlobal(x[4],x,'products-slider-')" id="btn_{{x[4]}}" class="active btn btn-sm btn-primary pull-right Add"><i id="spinid_{{x[4]}}" class="fa fa-shopping-cart"></i> </a>-->
+                                <div class="price-wrap h6">
+
+                                </div> <!-- price-wrap.// -->
+                            </div> <!-- action-wrap -->
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+        </div> <!-- row.// -->
+
+
+
+    </div> <!-- container .//  -->
+</section>
+
+
+<section class="section-content padding-y-sm bg">
+    <div class="container">
+
+        <header class="section-heading heading-line">
+            <h4 class="title-section bg">Top Rated Picks</h4>
+        </header>
+
+        <div ng-show="loadtop==false">
+            <div style="text-align:center;">
+                <img src="../img/ajax_loading.gif" width="100" />
+            </div>
+        </div>
+
+
+        <div class="sliderarrow">
+            <i class="fa fa-chevron-left"></i>
+            <i style="float:right" class="fa fa-chevron-right"></i>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="owl-carousel owl-init topRated-slider">
+
+
+                <div class="item-slide" ng-repeat="x in TopRatedItems">
+                    <figure class="card card-product">
+                        <span class="badge-new"> {{x[5]|currency:"₹ "}} </span>
+                        <div class="img-wrap" style="cursor:pointer" ng-click="SetProduct(x)">
+                            <img class="card-img-top" src="{{GetProductImage(x[13])}}" alt="{{x[9]}}">
+
+                        </div>
+                        <figcaption class="info-wrap text-center">
+                            <h6 style="cursor:pointer" ng-click="SetProduct(x)" class="title text-truncate">{{x[9]}}</h6>
+                            <div class="action-wrap">
+                                <!--<a ng-click="AddToCartGlobal(x[4],x,'products-slider-')" id="btn_{{x[4]}}" class="active btn btn-sm btn-primary pull-right Add"><i id="spinid_{{x[4]}}" class="fa fa-shopping-cart"></i></a>-->
+
+                                <div class="price-wrap h6">
+
+                                </div> <!-- price-wrap.// -->
+                            </div> <!-- action-wrap -->
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div> <!-- row.// -->
+    </div> <!-- container .//  -->
+</section>
+
+
+<section class="section-content padding-y-sm bg" ng-if="MostSaledItems.length>0">
+    <div class="container">
+
+        <header class="section-heading heading-line">
+            <h4 class="title-section bg">Most Saled Picks</h4>
+        </header>
+
+        <div ng-show="loadmostsale==false">
+
+
+            <div style="text-align:center;">
+                <img src="../img/ajax_loading.gif" width="100" />
+            </div>
+
+
+        </div>
+        <div class="sliderarrow">
+            <i class="fa fa-chevron-left"></i>
+            <i style="float:right" class="fa fa-chevron-right"></i>
+        </div>
+        <div class="row no-gutters">
+            <div class="owl-carousel owl-init mostsaled-slider">
+                <div class="item-slide" ng-repeat="x in MostSaledItems">
+                    <figure class="card card-product">
+                        <span class="badge-new"> {{x[5]|currency:"₹ "}} </span>
+                        <div class="img-wrap" style="cursor:pointer" ng-click="SetProduct(x)">
+                            <img class="card-img-top" src="{{GetProductImage(x[13])}}" alt="{{x[9]}}">
+                        </div>
+                        <figcaption class="info-wrap text-center">
+                            <h6 style="cursor:pointer" ng-click="SetProduct(x)" class="title text-truncate">{{x[9]}}</h6>
+                            <div class="action-wrap">
+                                <!--<a ng-click="AddToCartGlobal(x[4],x,'products-slider-')" id="btn_{{x[4]}}" ng-disabled="true" class="active btn btn-sm btn-primary pull-right Add"><i id="spinid_{{x[4]}}" class="fa fa-shopping-cart"></i></a>-->
+                                <div class="price-wrap h6">
+
+                                </div> <!-- price-wrap.// -->
+                            </div> <!-- action-wrap -->
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+        </div> <!-- row.// -->
+    </div> <!-- container .//  -->
+</section>
+
+
+
