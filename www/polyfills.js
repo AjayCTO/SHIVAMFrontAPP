@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\mottoApp\New folder (4)\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\src\polyfills.ts */"hN/g");
 
 
 /***/ }),

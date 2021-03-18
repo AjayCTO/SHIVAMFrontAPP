@@ -58,13 +58,13 @@ ___CSS_LOADER_EXPORT___.push([module.i, "/*!\n * Bootstrap v4.6.0 (https://getbo
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\mottoApp\New folder (4)\node_modules\bootstrap\dist\css\bootstrap.css */"+eM2");
-__webpack_require__(/*! D:\mottoApp\New folder (4)\node_modules\ngx-toastr\toastr.css */"G9EY");
-__webpack_require__(/*! D:\mottoApp\New folder (4)\src\assets\ecomm\ui.css */"8hg4");
-__webpack_require__(/*! D:\mottoApp\New folder (4)\src\assets\ecomm\responsive.css */"vIHv");
-__webpack_require__(/*! D:\mottoApp\New folder (4)\node_modules\photoswipe\dist\photoswipe.css */"NDqF");
-__webpack_require__(/*! D:\mottoApp\New folder (4)\node_modules\photoswipe\dist\default-skin\default-skin.css */"P7Wk");
-module.exports = __webpack_require__(/*! D:\mottoApp\New folder (4)\src\styles.css */"OmL/");
+__webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\node_modules\bootstrap\dist\css\bootstrap.css */"+eM2");
+__webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\node_modules\ngx-toastr\toastr.css */"G9EY");
+__webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\src\assets\ecomm\ui.css */"8hg4");
+__webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\src\assets\ecomm\responsive.css */"vIHv");
+__webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\node_modules\photoswipe\dist\photoswipe.css */"NDqF");
+__webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\node_modules\photoswipe\dist\default-skin\default-skin.css */"P7Wk");
+module.exports = __webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\src\styles.css */"OmL/");
 
 
 /***/ }),

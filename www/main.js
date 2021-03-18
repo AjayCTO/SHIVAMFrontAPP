@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\mottoApp\New folder (4)\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Shivam-01\Desktop\Ecommerce latest\Ecommerce\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -374,11 +374,9 @@ class CheckoutComponent {
         this.TotalOfAllItems = 0;
     }
     ngOnInit() {
-        debugger;
         this.User = this.authService.currentUserValue;
         this.allCarttems = this.selectedProductService.items;
         this.getTotal();
-        debugger;
     }
     getTotal() {
         this.TotalOfAllItems = 0;
@@ -387,7 +385,6 @@ class CheckoutComponent {
         });
     }
     PlaceOrder() {
-        debugger;
         this.CustomerDetails.UserName = this.User.userName;
         this.mainCartItem = [];
         this.allCarttems.forEach(element => {
@@ -408,9 +405,7 @@ class CheckoutComponent {
             OrderCartItem: this.mainCartItem, CartTotal: this.TotalOfAllItems, OrderCustomerData: this.CustomerDetails, PaymentInfo: this.PaymentInformation, CustomerBillAddress: this.CustBillingaddress
         };
         this.checkoutService.PostOrder(allDataToSend).subscribe(res => {
-            debugger;
             if (res.success == true) {
-                debugger;
                 this.notifyService.showSuccess("Your order has been placed and will be processed as soon as possible !!", "Succesfully Orderd");
                 localStorage.removeItem('items');
                 this.router.navigate(['/home']);
@@ -855,13 +850,12 @@ class SelectedProductService {
         localStorage.setItem('searchText', JSON.stringify(this._searchText)); // sync the data
     }
     get length() {
-        return this._items.length;
+        return this._items.length == undefined ? 0 : this._items.lenght;
     }
     get items() {
         return this._items.slice(0);
     }
     get _searchTextField() {
-        debugger;
         this._searchText = JSON.parse(localStorage.getItem('searchText'));
         return this._searchText;
     }
@@ -1083,7 +1077,6 @@ class MainContentComponent {
         });
     }
     ngOnInit() {
-        debugger;
         this.showCategoryFilter = this.showCategoryFilter == undefined ? true : this.showCategoryFilter;
         this.categoryService.getCategories().subscribe(res => {
             res.forEach(element => {
@@ -1122,13 +1115,11 @@ class MainContentComponent {
         console.log('filter:', value);
     }
     addToCart(currentItem) {
-        debugger;
         currentItem.isAddedToCart = true;
         this.selectedProductService.add(currentItem);
         this.notifyService.showSuccess("Add to Card Succcessfully", currentItem.ProductName);
     }
     onSelectedChange(value) {
-        debugger;
         this.pageId = 0;
         this.items = [];
         this.selectedCategories = value;
@@ -1617,7 +1608,6 @@ class HeaderComponent {
         this.router = router;
         this.authenticationService = authenticationService;
         this.categories = [];
-        this.searchText = '';
         //this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
     ngOnInit() {
@@ -1629,7 +1619,6 @@ class HeaderComponent {
         return this.selectedProductService.items.length;
     }
     searchForString() {
-        debugger;
         this.selectedProductService.addSearch(this.searchText);
         this.router.navigateByUrl("/products");
     }
@@ -2069,11 +2058,11 @@ class CartComponent {
         this.TotalOfAllItems = 0;
     }
     ngOnInit() {
-        debugger;
         this.allCarttems = this.selectedProductService.items;
         this.allCarttems.forEach(element => {
-            this.ImagePath = element.productImage.imagepath;
+            this.ImagePath = element.ImagePath;
         });
+        this.cdr.detectChanges();
         this.getTotal();
     }
     remove(currentItem) {
@@ -2266,7 +2255,6 @@ class CategoryComponent {
         this.categories = [];
     }
     ngOnInit() {
-        debugger;
         this.categoryService.getCategories().subscribe(res => {
             this.categories = res;
             this.categories.forEach(element => {
@@ -2278,11 +2266,10 @@ class CategoryComponent {
         });
     }
     categoryselect(id) {
-        debugger;
     }
 }
 CategoryComponent.ɵfac = function CategoryComponent_Factory(t) { return new (t || CategoryComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_header_service_category_service__WEBPACK_IMPORTED_MODULE_2__["CategoryService"])); };
-CategoryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CategoryComponent, selectors: [["app-category"]], decls: 2, vars: 1, consts: [[1, "container"], ["class", "padding-bottom", 4, "ngFor", "ngForOf"], [1, "padding-bottom"], [1, "section-heading", "heading-line"], [1, "title-section", "text-uppercase"], [1, "card", "card-home-category"], [1, "row", "no-gutters"], [1, "col-md-3"], [1, "home-category-banner", "bg-light-orange", 2, "margin-left", "21px", "margin-top", "10px"], [1, "title"], ["alt", "", 2, "height", "80%", "width", "100%", "margin-right", "12px", 3, "src", "click"], ["href", "#", "routerLink", "/products", 1, "btn", "btn-outline-primary", "rounded-pill", 2, "margin-top", "10px", "margin-bottom", "10px"], [1, "col-md-9"], [1, "row", "no-gutters", "bordered-cols"], ["class", "col-6 col-lg-3 col-md-4", 4, "ngFor", "ngForOf"], [1, "col-6", "col-lg-3", "col-md-4"], ["routerLink", "/products", 1, "item"], [1, "card-body"], [1, "text-muted"], [1, "fa", "fa-map-marker-alt"]], template: function CategoryComponent_Template(rf, ctx) { if (rf & 1) {
+CategoryComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CategoryComponent, selectors: [["app-category"]], decls: 2, vars: 1, consts: [[1, "container"], ["class", "padding-bottom", 4, "ngFor", "ngForOf"], [1, "padding-bottom"], [1, "section-heading", "heading-line"], [1, "title-section", "text-uppercase"], [1, "card", "card-home-category"], [1, "row", "no-gutters"], [1, "col-md-3"], [1, "home-category-banner", "bg-light-orange", 2, "margin-left", "21px", "margin-top", "10px"], [1, "title"], ["alt", "", 2, "height", "80%", "width", "100%", "margin-right", "12px", 3, "src", "click"], ["routerLink", "/products", 1, "btn", "btn-outline-primary", "rounded-pill", 2, "margin-top", "10px", "margin-bottom", "10px"], [1, "col-md-9"], [1, "row", "no-gutters", "bordered-cols"], ["class", "col-6 col-lg-3 col-md-4", 4, "ngFor", "ngForOf"], [1, "col-6", "col-lg-3", "col-md-4"], ["routerLink", "/products", 1, "item"], [1, "card-body"], [1, "text-muted"], [1, "fa", "fa-map-marker-alt"]], template: function CategoryComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CategoryComponent_section_1_Template, 18, 5, "section", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2457,7 +2444,6 @@ class ProductdetailComponent {
         this.productId = {};
     }
     ngOnInit() {
-        debugger;
         this.route.queryParamMap
             .subscribe((params) => {
             var allPrams = Object.assign(Object.assign({}, params.keys), params);
@@ -2493,7 +2479,6 @@ class ProductdetailComponent {
         }
     }
     updateCart(type, item) {
-        debugger;
         if (type == "plus") {
             this.ItemDetails.selectedQuantity = this.ItemDetails.selectedQuantity + 1;
         }
@@ -2504,7 +2489,6 @@ class ProductdetailComponent {
         // this.getTotal();
     }
     addToCart(currentItem) {
-        debugger;
         currentItem.isAddedToCart = true;
         this.selectedProductService.add(currentItem);
         this.notifyService.showSuccess("Add to Card Succcessfully", currentItem.ProductName);
@@ -2569,7 +2553,6 @@ class ProductService {
         this.selectedItem = selectedItem;
     }
     getProducts(pageId, categories) {
-        debugger;
         var _model = { displayLength: 20, displayStart: pageId * 20, searchText: this.selectedItem._searchTextField, filtertext: '', Categories: categories, lowprice: null, highprice: null, isFeatured: "0", ProductId: "" };
         return this.httpClient.post(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiBaseUrl + 'api/Product/GetAllproduct', _model);
     }
@@ -2755,7 +2738,6 @@ class AuthenticationService {
         let data = "grant_type=password&username=" + username + "&password=" + password;
         return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiBaseUrl}token`, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(user => {
-            debugger;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
             this.currentUserSubject.next(user);
